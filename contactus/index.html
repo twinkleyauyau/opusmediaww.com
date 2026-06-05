@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Opus Media</title>
+<meta name="description" content="Get in touch with Opus Media. We're based in Hong Kong and Singapore, helping brands grow locally, regionally, and globally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   OPUS MEDIA — Contact Us
+   Crimson #9B1B1B · Charcoal #2A2A2A
+   Bebas Neue (display) · DM Sans (body)
+═══════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --red:       #9B1B1B;
+  --red-deep:  #7A1212;
+  --red-mid:   #B52020;
+  --charcoal:  #2A2A2A;
+  --off-white: #F7F6F4;
+  --white:     #FFFFFF;
+  --muted:     #888;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
+img  { display: block; max-width: 100%; }
+a    { text-decoration: none; }
+button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+/* ── BUTTONS ── */
+.btn-white {
+  background: var(--white); color: var(--red); border: none;
+  padding: .85rem 2rem; font-size: .8rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+  transition: background .2s; display: inline-block;
+}
+.btn-white:hover { background: #f0f0f0; }
+
+.btn-red {
+  background: var(--red); color: #fff; border: none;
+  padding: .9rem 2.4rem; font-size: .8rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+  transition: background .2s; width: 100%;
+  display: block; text-align: center;
+}
+.btn-red:hover { background: var(--red-deep); }
+.btn-red:disabled { background: #aaa; cursor: not-allowed; }
+
+/* ══════════════════════════
+   NAV
+══════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 3rem;
+  background: var(--white);
+  box-shadow: 0 2px 20px rgba(0,0,0,.07);
+}
+.nav__logo { height: 34px; }
+.nav__links { display: flex; gap: 2rem; list-style: none; }
+.nav__links a {
+  font-size: .72rem; font-weight: 500; color: #888;
+  letter-spacing: .07em; text-transform: uppercase; transition: color .2s;
+}
+.nav__links a:hover, .nav__links a.active { color: var(--red); }
+.nav__cta {
+  background: var(--red); color: #fff; border: none;
+  padding: .55rem 1.4rem; font-size: .72rem; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase; transition: background .2s;
+}
+.nav__cta:hover { background: var(--red-deep); }
+
+/* ══════════════════════════
+   PAGE HERO — half screen
+══════════════════════════ */
+.page-hero {
+  min-height: 42vh;
+  background: var(--red);
+  display: flex; align-items: flex-end;
+  padding: 7rem 3rem 4rem;
+  position: relative; overflow: hidden;
+}
+.page-hero__watermark {
+  position: absolute; bottom: -2rem; right: -1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(6rem, 16vw, 14rem);
+  color: rgba(0,0,0,.1); line-height: 1;
+  pointer-events: none; user-select: none;
+  letter-spacing: .02em;
+}
+.page-hero__content { position: relative; z-index: 2; max-width: 1100px; width: 100%; margin: 0 auto; }
+.page-hero__eyebrow {
+  font-size: .7rem; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 1rem;
+}
+.page-hero__eyebrow::before {
+  content: ''; display: block;
+  width: 24px; height: 1px; background: rgba(255,255,255,.4);
+}
+.page-hero__h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: .92; letter-spacing: .01em; color: #fff;
+  margin-bottom: .8rem;
+}
+.page-hero__sub {
+  font-size: .95rem; line-height: 1.75;
+  color: rgba(255,255,255,.6); max-width: 500px;
+}
+
+/* ══════════════════════════
+   MAIN CONTENT — form + details
+══════════════════════════ */
+.contact-body { background: var(--white); padding: 5rem 3rem; }
+.contact-body__inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 5rem; align-items: start;
+}
+
+/* ── FORM ── */
+.eyebrow {
+  font-size: .68rem; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--red); display: flex; align-items: center;
+  gap: 8px; margin-bottom: .6rem;
+}
+.eyebrow::before { content: ''; display: block; width: 16px; height: 1px; background: var(--red); }
+
+.form-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; color: var(--charcoal);
+  line-height: .95; letter-spacing: .01em; margin-bottom: 2.5rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.2rem; }
+.form-group label {
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--charcoal);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem; color: var(--charcoal);
+  background: var(--off-white);
+  border: 1.5px solid #E8E5E2;
+  padding: .75rem 1rem;
+  transition: border-color .2s, background .2s;
+  outline: none; width: 100%;
+  -webkit-appearance: none; appearance: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--red);
+  background: var(--white);
+}
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+.form-group textarea { resize: vertical; min-height: 140px; line-height: 1.6; }
+
+/* field error */
+.field-error {
+  font-size: .72rem; color: #c0392b;
+  margin-top: .2rem; min-height: 1rem;
+}
+
+/* success state */
+.form-success {
+  display: none;
+  background: var(--off-white);
+  border-left: 3px solid var(--red);
+  padding: 2rem 1.5rem;
+  margin-top: 1rem;
+}
+.form-success__icon {
+  font-size: 2rem; margin-bottom: .8rem;
+}
+.form-success__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; color: var(--charcoal);
+  letter-spacing: .01em; margin-bottom: .4rem;
+}
+.form-success__body { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+/* form-level error */
+.form-error-msg {
+  display: none;
+  font-size: .8rem; color: #c0392b;
+  background: #fff0f0; border: 1px solid #f5c6c6;
+  padding: .75rem 1rem; margin-bottom: 1rem;
+}
+
+/* ── CONTACT DETAILS ── */
+.details { padding-top: 1rem; }
+.details__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; color: var(--charcoal);
+  line-height: .95; letter-spacing: .01em; margin-bottom: 2rem;
+}
+.detail-block { margin-bottom: 2rem; }
+.detail-block__label {
+  font-size: .65rem; font-weight: 600;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--red); margin-bottom: .5rem;
+}
+.detail-block__value {
+  font-size: .9rem; color: var(--charcoal);
+  line-height: 1.7;
+}
+.detail-block__value a { color: var(--charcoal); transition: color .2s; }
+.detail-block__value a:hover { color: var(--red); }
+.detail-divider { width: 100%; height: 1px; background: #E8E5E2; margin-bottom: 2rem; }
+.social-links { display: flex; gap: 1rem; margin-top: .5rem; }
+.social-links a {
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--charcoal); border: 1.5px solid #E8E5E2;
+  padding: .5rem 1.1rem; transition: all .2s;
+}
+.social-links a:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+/* ══════════════════════════
+   MAPS — side by side
+══════════════════════════ */
+.maps { background: var(--off-white); padding: 5rem 3rem; }
+.maps__inner { max-width: 1100px; margin: 0 auto; }
+.eyebrow-dark {
+  font-size: .68rem; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--red); display: flex; align-items: center;
+  gap: 8px; margin-bottom: .6rem;
+}
+.eyebrow-dark::before { content: ''; display: block; width: 16px; height: 1px; background: var(--red); }
+.maps__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; color: var(--charcoal);
+  line-height: .95; letter-spacing: .01em; margin-bottom: 2.5rem;
+}
+.maps__grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--charcoal); }
+.map-card { background: var(--white); overflow: hidden; }
+.map-card__header { padding: 1.5rem 2rem; background: var(--white); }
+.map-card__flag { font-size: 1.4rem; margin-bottom: .4rem; }
+.map-card__city {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; letter-spacing: .02em;
+  color: var(--charcoal); line-height: 1; margin-bottom: 2px;
+}
+.map-card__role {
+  font-size: .62rem; font-weight: 600;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--red); margin-bottom: .3rem;
+}
+.map-card__addr { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+.map-card iframe {
+  display: block; width: 100%; height: 280px;
+  border: none; filter: grayscale(20%);
+}
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+.footer {
+  background: #111; padding: 1.8rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer__logo { height: 26px; filter: brightness(0) invert(.4); }
+.footer__links { display: flex; gap: 2rem; align-items: center; }
+.footer__links a {
+  font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.2); transition: color .2s;
+}
+.footer__links a:hover { color: rgba(255,255,255,.5); }
+.footer__sep { width: 1px; height: 14px; background: rgba(255,255,255,.1); }
+.footer__copy { font-size: .68rem; color: rgba(255,255,255,.15); }
+
+/* ══════════════════════════
+   RESPONSIVE
+══════════════════════════ */
+@media (max-width: 960px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav__links { display: none; }
+  .page-hero { padding: 6rem 1.5rem 3rem; }
+  .contact-body { padding: 3.5rem 1.5rem; }
+  .contact-body__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .maps { padding: 3.5rem 1.5rem; }
+  .maps__grid { grid-template-columns: 1fr; }
+  .footer { flex-wrap: wrap; gap: 1.2rem; padding: 1.5rem; justify-content: center; text-align: center; }
+  .footer__links { flex-wrap: wrap; justify-content: center; }
+  .footer__sep { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/"><img class="nav__logo" src="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png" alt="Opus Media"></a>
+  <ul class="nav__links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/joinus">Join Us</a></li>
+    <li><a href="/contactus" class="active">Contact Us</a></li>
+  </ul>
+  <button class="nav__cta" onclick="window.location.href='/contactus'">Get Started</button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__watermark" aria-hidden="true">CONTACT</div>
+  <div class="page-hero__content">
+    <p class="page-hero__eyebrow">Get in touch</p>
+    <h1 class="page-hero__h1">Let's Talk.</h1>
+    <p class="page-hero__sub">
+      Our success is defined by your business growth.
+      Help us to help you — drop us a note and let's build something together.
+    </p>
+  </div>
+</section>
+
+<!-- FORM + DETAILS -->
+<section class="contact-body">
+  <div class="contact-body__inner">
+
+    <!-- FORM -->
+    <div>
+      <div class="eyebrow">Send us a message</div>
+      <h2 class="form-title">We'd Love to<br>Hear From You.</h2>
+
+      <!-- Formspree success message -->
+      <div class="form-success" id="form-success" style="display:none">
+        <div class="form-success__icon">✓</div>
+        <div class="form-success__title">Message Sent!</div>
+        <p class="form-success__body">
+          Thanks for reaching out. We'll get back to you within 1–2 business days.
+        </p>
+      </div>
+
+      <!-- Formspree form-level error -->
+      <div data-fs-error class="form-error-msg" id="form-error">
+        Something went wrong. Please try again or email us directly at
+        <a href="mailto:info@opusmediaww.com">info@opusmediaww.com</a>
+      </div>
+
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first_name"
+              data-fs-field required placeholder="Jane">
+            <span class="field-error" data-fs-error="first_name"></span>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last_name"
+              data-fs-field required placeholder="Smith">
+            <span class="field-error" data-fs-error="last_name"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email"
+              data-fs-field required placeholder="jane@company.com">
+            <span class="field-error" data-fs-error="email"></span>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone"
+              placeholder="+852 0000 0000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company"
+            placeholder="Your Company Ltd.">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select a service…</option>
+            <option value="Integrated Media Solution">Integrated Media Solution</option>
+            <option value="E-Commerce & Performance Driver">E-Commerce &amp; Performance Driver</option>
+            <option value="Creative Communication Services">Creative Communication Services</option>
+            <option value="Web Architecture & Optimization">Web Architecture &amp; Optimization</option>
+            <option value="Social Curation & Amplification">Social Curation &amp; Amplification</option>
+            <option value="Multi-markets Digital Enablers">Multi-markets Digital Enablers</option>
+            <option value="General Enquiry">General Enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message"
+            data-fs-field required
+            placeholder="Tell us about your brand and what you're looking to achieve…"></textarea>
+          <span class="field-error" data-fs-error="message"></span>
+        </div>
+
+        <button type="submit" class="btn-red" data-fs-submit-btn>
+          Send Message →
+        </button>
+      </form>
+    </div>
+
+    <!-- CONTACT DETAILS -->
+    <div class="details">
+      <div class="eyebrow">Contact details</div>
+      <h2 class="details__title">Find Us.</h2>
+
+      <div class="detail-block">
+        <div class="detail-block__label">Email</div>
+        <div class="detail-block__value">
+          <a href="mailto:info@opusmediaww.com">info@opusmediaww.com</a>
+        </div>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="detail-block">
+        <div class="detail-block__label">🇭🇰 Hong Kong — Headquarters</div>
+        <div class="detail-block__value">
+          Unit 5-6, 18/F, The 80 20<br>
+          161 Wai Yip St, Kwun Tong<br>
+          Hong Kong
+        </div>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="detail-block">
+        <div class="detail-block__label">🇸🇬 Singapore — Regional Office</div>
+        <div class="detail-block__value">
+          160 Robinson Road #14-04<br>
+          Singapore 068914
+        </div>
+      </div>
+      <div class="detail-divider"></div>
+      <div class="detail-block">
+        <div class="detail-block__label">🇨🇳 Shanghai — China Office</div>
+        <div class="detail-block__value">
+          Rm 519, Huaqiang Building<br>
+          151 Keyuan Rd, Pudong New District<br>
+          Shanghai
+        </div>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <div class="detail-block">
+        <div class="detail-block__label">Follow Us</div>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/opus-media-limited-hk/"
+             target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/opusmediaww/"
+             target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MAPS -->
+<section class="maps">
+  <div class="maps__inner">
+    <div class="eyebrow-dark">Our offices</div>
+    <h2 class="maps__title">Come Find Us.</h2>
+    <div class="maps__grid">
+
+      <!-- HK MAP -->
+      <div class="map-card">
+        <div class="map-card__header">
+          <div class="map-card__flag">🇭🇰</div>
+          <div class="map-card__city">Hong Kong</div>
+          <div class="map-card__role">Headquarters</div>
+          <div class="map-card__addr">Unit 5-6, 18/F, The 80 20, 161 Wai Yip St, Kwun Tong</div>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0902691423216!2d114.21673137724687!3d22.312425579677925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340401ea593fb161%3A0xe741a58854b0838!2sThe%2080%20%7C%2020!5e0!3m2!1sen!2suk!4v1780470144880!5m2!1sen!2suk"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Opus Media Hong Kong Office">
+        </iframe>
+      </div>
+
+      <!-- SG MAP -->
+      <div class="map-card">
+        <div class="map-card__header">
+          <div class="map-card__flag">🇸🇬</div>
+          <div class="map-card__city">Singapore</div>
+          <div class="map-card__role">Regional Office</div>
+          <div class="map-card__addr">160 Robinson Road #14-04, Singapore 068914</div>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8257833422886!2d103.84540337707752!3d1.2780369987098146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a899f57e67%3A0xe2f9536e3baeaa1!2s160%20Robinson%20Rd%2C%20%2314-04%20SBF%20Center%2C%20Singapore%20068914!5e0!3m2!1sen!2suk!4v1780470180066!5m2!1sen!2suk"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Opus Media Singapore Office">
+        </iframe>
+      </div>
+
+      <!-- SH MAP -->
+      <div class="map-card">
+        <div class="map-card__header">
+          <div class="map-card__flag">🇨🇳</div>
+          <div class="map-card__city">Shanghai</div>
+          <div class="map-card__role">China Office</div>
+          <div class="map-card__addr">Rm 519, Huaqiang Building, 151 Keyuan Rd, Pudong New District, Shanghai</div>
+        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.5!2d121.5955!3d31.2226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDEzJzIxLjQiTiAxMjHCsDM1JzQ0LjAiRQ!5e0!3m2!1sen!2scn!4v1234567890"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Opus Media Shanghai Office">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img class="footer__logo" src="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png" alt="Opus Media">
+  <div class="footer__links">
+    <a href="/#about">About</a>
+    <a href="/#services">Services</a>
+    <a href="/joinus">Join Us</a>
+    <a href="/contactus">Contact</a>
+    <div class="footer__sep"></div>
+    <a href="https://www.linkedin.com/company/opus-media-limited-hk/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/opusmediaww/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <span class="footer__copy">Copyright &copy; 2025 Opus Media Limited</span>
+</footer>
+
+<!-- Formspree Ajax -->
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('[data-fs-submit-btn]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      const data = new FormData(form);
+      const res = await fetch('https://formspree.io/f/xeewjlbw', {
+        method: 'POST', body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        document.getElementById('form-error').style.display = 'block';
+        if (btn) { btn.disabled = false; btn.textContent = 'Send Message →'; }
+      }
+    });
+  });
+</script>
+</body>
+</html>
