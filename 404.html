@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting | Opus Media</title>
+<script>
+// ── URL Redirect Map ──
+// Old Wix URLs → New GitHub Pages URLs
+const redirects = {
+  '/home':                          '/',
+  '/career':                        '/joinus',
+  '/careers':                       '/joinus',
+  '/join-us':                       '/joinus',
+  '/contact-us':                    '/contactus',
+  '/contact':                       '/contactus',
+  '/our-services':                  '/#services',
+  '/intergrated-media-solution':    '/services/integrated-media',
+  '/integrated-media-solution':     '/services/integrated-media',
+  '/e-commerce-performance-driver': '/services/ecommerce',
+  '/e-commerce':                    '/services/ecommerce',
+  '/creative-communication-services': '/services/creative',
+  '/creative':                      '/services/creative',
+  '/web-architecture-optimization': '/services/web',
+  '/web-architecture-optimisation': '/services/web',
+  '/social-curation-amplification-1': '/services/social',
+  '/social-curation-amplification':   '/services/social',
+  '/social':                        '/services/social',
+  '/multi-markets-digital-enablers':  '/services/multimarket',
+  '/multi-market':                  '/services/multimarket',
+};
+
+(function() {
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+  const destination = redirects[path];
+
+  if (destination) {
+    // 301-style redirect
+    window.location.replace(destination);
+  }
+  // If no match found, show the 404 page below
+})();
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --red: #9B1B1B; --charcoal: #2A2A2A; --off-white: #F7F6F4; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--off-white);
+  color: var(--charcoal);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; text-align: center; padding: 2rem;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&display=swap');
+.wrap { max-width: 500px; }
+.num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 8rem; color: var(--red);
+  opacity: 0.15; line-height: 1;
+  margin-bottom: -1rem;
+}
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; color: var(--charcoal);
+  line-height: 1; margin-bottom: 1rem;
+}
+.sub {
+  font-size: 0.95rem; color: #888;
+  line-height: 1.7; margin-bottom: 2rem;
+}
+.btn {
+  background: var(--red); color: #fff; border: none;
+  padding: 0.85rem 2rem; font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; display: inline-block;
+  transition: background 0.2s;
+}
+.btn:hover { background: #7A1212; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="num">404</div>
+  <h1 class="title">Page Not Found.</h1>
+  <p class="sub">The page you're looking for has moved or doesn't exist. Let's get you back on track.</p>
+  <a class="btn" href="/">Back to Homepage →</a>
+</div>
+</body>
+</html>
