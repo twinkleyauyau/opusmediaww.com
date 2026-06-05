@@ -384,12 +384,22 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
    RESPONSIVE
 ══════════════════════════ */
 @media (max-width: 960px) {
-  .nav { padding: 1rem 1.5rem; }
-  .nav.scrolled { padding: .8rem 1.5rem; }
+  /* NAV */
+  .nav { padding: 1rem 1.5rem; background: transparent; }
+  .nav.scrolled { padding: .8rem 1.5rem; background: var(--white); }
   .nav__links { display: none; }
-  .hero__content {
-   padding: 2rem 1.5rem 3.5rem; }
+  /* Fix logo — always dark on mobile since nav bg is white when scrolled */
+  .nav.scrolled .nav__logo { filter: none; }
+  /* Keep logo white over hero */
+  .nav:not(.scrolled) .nav__logo { filter: brightness(0) invert(1); }
+
+  /* HERO */
+  .hero__content { padding: 2rem 1.5rem 3.5rem; }
   .hero__bottom { flex-direction: column; align-items: flex-start; }
+  /* Hide scroll cue on mobile — it overlaps buttons */
+  .scroll-cue { display: none; }
+
+  /* LAYOUT */
   .about__inner { grid-template-columns: 1fr; gap: 2rem; }
   .services__inner { grid-template-columns: 1fr; gap: 2rem; }
   .services__left { position: static; }
