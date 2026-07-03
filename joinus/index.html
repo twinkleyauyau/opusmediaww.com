@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Team</title>
+<meta name="description" content="Join the Opus Media team. A growing digital marketing agency in Hong Kong and Singapore looking for creative thinkers, data-driven problem solvers and digital enthusiasts.">
+<!-- OG Tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Join the Team | Opus Media">
+<meta property="og:description" content="Join the Opus Media team. A growing digital marketing agency in Hong Kong and Singapore looking for creative thinkers, data-driven problem solvers and digital enthusiasts.">
+<meta property="og:url" content="https://www.opusmediaww.com/joinus">
+<meta property="og:image" content="https://www.opusmediaww.com/og-image.png">
+<meta property="og:site_name" content="Opus Media">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Join the Team | Opus Media">
+<meta name="twitter:description" content="Join the Opus Media team. A growing digital marketing agency in Hong Kong and Singapore looking for creative thinkers, data-driven problem solvers and digital enthusiasts.">
+<meta name="twitter:image" content="https://www.opusmediaww.com/og-image.png">
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4708LDRL7F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4708LDRL7F');
+</script>
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+<link rel="canonical" href="https://www.opusmediaww.com/joinus">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   OPUS MEDIA — Join Us
+   Crimson #9B1B1B · Charcoal #2A2A2A
+   Bebas Neue (display) · DM Sans (body)
+═══════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --red:       #9B1B1B;
+  --red-deep:  #7A1212;
+  --red-mid:   #B52020;
+  --charcoal:  #2A2A2A;
+  --off-white: #F7F6F4;
+  --white:     #FFFFFF;
+  --muted:     #888;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
+img  { display: block; max-width: 100%; }
+a    { text-decoration: none; }
+button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+/* ── BUTTONS ── */
+.btn-red {
+  background: var(--red); color: #fff; border: none;
+  padding: .9rem 2.4rem; font-size: .8rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+  transition: background .2s; width: 100%;
+  display: block; text-align: center;
+}
+.btn-red:hover { background: var(--red-deep); }
+.btn-red:disabled { background: #aaa; cursor: not-allowed; }
+
+/* ══════════════════════════
+   NAV
+══════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 3rem;
+  background: var(--white);
+  box-shadow: 0 2px 20px rgba(0,0,0,.07);
+}
+.nav__logo { height: 34px; }
+.nav__links { display: flex; gap: 2rem; list-style: none; }
+.nav__links a {
+  font-size: .72rem; font-weight: 500; color: #888;
+  letter-spacing: .07em; text-transform: uppercase; transition: color .2s;
+}
+.nav__links a:hover, .nav__links a.active { color: var(--red); }
+.nav__cta {
+  background: var(--red); color: #fff; border: none;
+  padding: .55rem 1.4rem; font-size: .72rem; font-weight: 600;
+  letter-spacing: .07em; text-transform: uppercase; transition: background .2s;
+}
+.nav__cta:hover { background: var(--red-deep); }
+
+/* ══════════════════════════
+   PAGE HERO
+══════════════════════════ */
+.page-hero {
+  min-height: 42vh;
+  background: var(--charcoal);
+  display: flex; align-items: flex-end;
+  padding: 7rem 3rem 4rem;
+  position: relative; overflow: hidden;
+}
+.page-hero__watermark {
+  position: absolute; bottom: -2rem; right: -1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(6rem, 16vw, 14rem);
+  color: rgba(255,255,255,.04); line-height: 1;
+  pointer-events: none; user-select: none;
+  letter-spacing: .02em;
+}
+.page-hero__content {
+  position: relative; z-index: 2;
+  max-width: 1100px; width: 100%; margin: 0 auto;
+}
+.page-hero__eyebrow {
+  font-size: .7rem; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 1rem;
+}
+.page-hero__eyebrow::before {
+  content: ''; display: block;
+  width: 24px; height: 1px; background: rgba(255,255,255,.3);
+}
+.page-hero__h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: .92; letter-spacing: .01em; color: #fff;
+  margin-bottom: .8rem;
+}
+.page-hero__sub {
+  font-size: .95rem; line-height: 1.75;
+  color: rgba(255,255,255,.5); max-width: 500px;
+}
+
+/* ══════════════════════════
+   INTRO + TRAITS
+══════════════════════════ */
+.intro { background: var(--white); padding: 6rem 3rem; }
+.intro__inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
+}
+.eyebrow {
+  font-size: .68rem; font-weight: 500;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--red); display: flex; align-items: center;
+  gap: 8px; margin-bottom: .6rem;
+}
+.eyebrow::before { content: ''; display: block; width: 16px; height: 1px; background: var(--red); }
+.intro__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; color: var(--charcoal);
+  line-height: .95; letter-spacing: .01em; margin-bottom: 1.5rem;
+}
+.intro__body {
+  font-size: 1rem; line-height: 1.9; color: #555;
+}
+
+/* traits */
+.traits__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; color: var(--charcoal);
+  line-height: .95; letter-spacing: .01em; margin-bottom: 1.8rem;
+}
+.trait-list { display: flex; flex-direction: column; gap: 0; }
+.trait {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid #E8E5E2;
+}
+.trait:last-child { border-bottom: 1px solid #E8E5E2; }
+.trait__mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem; color: var(--red);
+  flex-shrink: 0; margin-top: 2px;
+  letter-spacing: .05em;
+}
+.trait__text {
+  font-size: .95rem; font-weight: 500;
+  color: var(--charcoal); line-height: 1.5;
+}
+.trait__sub {
+  font-size: .82rem; color: var(--muted);
+  line-height: 1.5; margin-top: .2rem;
+}
+
+/* ══════════════════════════
+   APPLY FORM
+══════════════════════════ */
+.apply { background: var(--off-white); padding: 6rem 3rem; }
+.apply__inner {
+  max-width: 720px; margin: 0 auto;
+}
+.apply__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; color: var(--charcoal);
+  line-height: .95; letter-spacing: .01em; margin-bottom: .8rem;
+}
+.apply__sub {
+  font-size: .9rem; line-height: 1.75; color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+.apply__sub a { color: var(--red); border-bottom: 1px solid var(--red); padding-bottom: 1px; }
+.apply__sub a:hover { opacity: .75; }
+
+/* form elements */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.2rem; }
+.form-group label {
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--charcoal);
+}
+.form-group input,
+.form-group textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem; color: var(--charcoal);
+  background: var(--white);
+  border: 1.5px solid #E8E5E2;
+  padding: .75rem 1rem;
+  transition: border-color .2s, background .2s;
+  outline: none; width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--red);
+  background: var(--white);
+}
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+.form-group textarea { resize: vertical; min-height: 160px; line-height: 1.6; }
+.field-error { font-size: .72rem; color: #c0392b; margin-top: .2rem; min-height: 1rem; }
+
+/* success */
+.form-success {
+  display: none;
+  background: var(--white);
+  border-left: 3px solid var(--red);
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.form-success__icon { font-size: 2rem; margin-bottom: .8rem; }
+.form-success__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; color: var(--charcoal);
+  letter-spacing: .01em; margin-bottom: .4rem;
+}
+.form-success__body { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+/* form error */
+.form-error-msg {
+  display: none;
+  font-size: .8rem; color: #c0392b;
+  background: #fff0f0; border: 1px solid #f5c6c6;
+  padding: .75rem 1rem; margin-bottom: 1rem;
+}
+
+/* ══════════════════════════
+   FOOTER
+══════════════════════════ */
+.footer {
+  background: #111; padding: 1.8rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer__logo { height: 26px; filter: brightness(0) invert(.4); }
+.footer__links { display: flex; gap: 2rem; align-items: center; }
+.footer__links a {
+  font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.2); transition: color .2s;
+}
+.footer__links a:hover { color: rgba(255,255,255,.5); }
+.footer__sep { width: 1px; height: 14px; background: rgba(255,255,255,.1); }
+.footer__copy { font-size: .68rem; color: rgba(255,255,255,.15); }
+
+/* ══════════════════════════
+   RESPONSIVE
+══════════════════════════ */
+@media (max-width: 960px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav__links { display: none; }
+  .page-hero { padding: 6rem 1.5rem 3rem; }
+  .intro { padding: 4rem 1.5rem; }
+  .intro__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .apply { padding: 4rem 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer { flex-wrap: wrap; gap: 1.2rem; padding: 1.5rem; justify-content: center; text-align: center; }
+  .footer__links { flex-wrap: wrap; justify-content: center; }
+  .footer__sep { display: none; }
+}
+</style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFQ8GTPB');</script>
+<!-- End Google Tag Manager -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Digital Marketing Roles",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Opus Media",
+    "url": "https://www.opusmediaww.com"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hong Kong",
+      "addressCountry": "HK"
+    }
+  },
+  "description": "Opus Media is always looking for creative thinkers, data-driven problem solvers and digital enthusiasts to join our growing team."
+}
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFQ8GTPB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/"><img class="nav__logo" src="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png" alt="Opus Media"></a>
+  <ul class="nav__links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/joinus" class="active">Join Us</a></li>
+    <li><a href="/contactus">Contact Us</a></li>
+  </ul>
+  <button class="nav__cta" onclick="window.location.href='/contactus'">Get Started</button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__watermark" aria-hidden="true">JOIN US</div>
+  <div class="page-hero__content">
+    <p class="page-hero__eyebrow">Careers</p>
+    <h1 class="page-hero__h1">Join the Team.</h1>
+    <p class="page-hero__sub">
+      We're always growing — and we're looking for people
+      who love what they do.
+    </p>
+  </div>
+</section>
+
+<!-- INTRO + TRAITS -->
+<section class="intro">
+  <div class="intro__inner">
+
+    <div>
+      <div class="eyebrow">Who we are</div>
+      <h2 class="intro__title">A Team That Thrives on Digital.</h2>
+      <p class="intro__body">
+        We're a growing team that thrives on creativity, data, and results.
+        Based in Hong Kong and Singapore, we work across markets, industries,
+        and disciplines — bringing together sharp media thinking and bold
+        creative execution.<br><br>
+        If that sounds like you — we want to hear from you.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="traits__title">What We Look For</h2>
+      <div class="trait-list">
+        <div class="trait">
+          <span class="trait__mark">✦</span>
+          <div>
+            <div class="trait__text">Creative Thinkers</div>
+            <div class="trait__sub">People who see problems differently and bring fresh ideas to the table.</div>
+          </div>
+        </div>
+        <div class="trait">
+          <span class="trait__mark">✦</span>
+          <div>
+            <div class="trait__text">Data-Driven Problem Solvers</div>
+            <div class="trait__sub">Those who back instinct with insight and let results do the talking.</div>
+          </div>
+        </div>
+        <div class="trait">
+          <span class="trait__mark">✦</span>
+          <div>
+            <div class="trait__text">Team Players Who Take Ownership</div>
+            <div class="trait__sub">Collaborative by nature, accountable by choice.</div>
+          </div>
+        </div>
+        <div class="trait">
+          <span class="trait__mark">✦</span>
+          <div>
+            <div class="trait__text">Passionate About Digital</div>
+            <div class="trait__sub">This isn't just a job — it's a craft. We want people who feel that too.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="apply" id="apply">
+  <div class="apply__inner">
+    <div class="eyebrow">Apply now</div>
+    <h2 class="apply__title">Tell Us About Yourself.</h2>
+    <p class="apply__sub">
+      Fill in the form below and we'll be in touch.
+    </p>
+
+    <!-- Success message -->
+    <div class="form-success" id="form-success" style="display:none">
+      <div class="form-success__icon">✓</div>
+      <div class="form-success__title">Application Sent!</div>
+      <p class="form-success__body">
+        Thanks for your application. We'll review it and be in touch soon.
+      </p>
+    </div>
+
+    <!-- Form-level error -->
+    <div data-fs-error class="form-error-msg">
+      Something went wrong. Please try again or email us directly at
+      <a href="mailto:info@opusmediaww.com">info@opusmediaww.com</a>.
+    </div>
+
+    <form id="apply-form">
+
+      <!-- Hidden tag so inbox shows "Job Application" -->
+      <input type="hidden" name="form_type" value="Job Application">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name *</label>
+          <input type="text" id="first-name" name="first_name"
+            data-fs-field required placeholder="Jane">
+          <span class="field-error" data-fs-error="first_name"></span>
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name *</label>
+          <input type="text" id="last-name" name="last_name"
+            data-fs-field required placeholder="Smith">
+          <span class="field-error" data-fs-error="last_name"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email"
+            data-fs-field required placeholder="jane@email.com">
+          <span class="field-error" data-fs-error="email"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone"
+            placeholder="+852 0000 0000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role / What You Do *</label>
+        <input type="text" id="role" name="role"
+          data-fs-field required
+          placeholder="e.g. Digital Marketing Manager, Creative Director…">
+        <span class="field-error" data-fs-error="role"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Tell Us About Yourself *</label>
+        <textarea id="message" name="message"
+          data-fs-field required
+          placeholder="Share your experience, what drives you, and why you'd love to work at Opus Media…"></textarea>
+        <span class="field-error" data-fs-error="message"></span>
+      </div>
+
+      <button type="submit" class="btn-red" data-fs-submit-btn>
+        Submit Application →
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img class="footer__logo" src="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png" alt="Opus Media">
+  <div class="footer__links">
+    <a href="/#about">About</a>
+    <a href="/#services">Services</a>
+    <a href="/joinus">Join Us</a>
+    <a href="/contactus">Contact</a>
+    <div class="footer__sep"></div>
+    <a href="https://www.linkedin.com/company/opus-media-limited-hk/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/opusmediaww/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <span class="footer__copy">Copyright &copy; 2025 Opus Media Limited</span>
+</footer>
+
+<!-- Formspree Ajax — same endpoint, tagged as Job Application -->
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('apply-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('[data-fs-submit-btn]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      const data = new FormData(form);
+      const res = await fetch('https://formspree.io/f/xeewjlbw', {
+        method: 'POST', body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        document.getElementById('form-error').style.display = 'block';
+        if (btn) { btn.disabled = false; btn.textContent = 'Submit Application →'; }
+      }
+    });
+  });
+</script>
+</body>
+</html>
