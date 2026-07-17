@@ -10,13 +10,13 @@
 <meta property="og:title" content="Opus Media | Full-Service Marketing Agency">
 <meta property="og:description" content="Opus Media is a full-service digital marketing agency headquartered in Hong Kong, with offices in Singapore and Shanghai. Integrated media, creative, e-commerce and multi-market solutions across Asia and beyond.">
 <meta property="og:url" content="https://www.opusmediaww.com/">
-<meta property="og:image" content="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png">
+<meta property="og:image" content="https://www.opusmediaww.com/og-image.png">
 <meta property="og:site_name" content="Opus Media">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Opus Media | Full-Service Marketing Agency">
 <meta name="twitter:description" content="Opus Media is a full-service digital marketing agency headquartered in Hong Kong, with offices in Singapore and Shanghai. Integrated media, creative, e-commerce and multi-market solutions across Asia and beyond.">
-<meta name="twitter:image" content="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png">
+<meta name="twitter:image" content="https://www.opusmediaww.com/og-image.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +62,7 @@
 </script>
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
+<link rel="canonical" href="https://www.opusmediaww.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -186,13 +187,9 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   font-size: .72rem; font-weight: 500;
   letter-spacing: .22em; text-transform: uppercase;
   color: rgba(255,255,255,.5);
-  display: flex; align-items: center; gap: 10px;
   margin-bottom: 1.2rem;
 }
-.hero__eyebrow::before {
-  content: ''; display: block;
-  width: 24px; height: 1px; background: rgba(255,255,255,.4);
-}
+
 .hero__h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(4rem, 9vw, 9rem);
@@ -215,25 +212,13 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   position: absolute; bottom: 2rem; left: 50%;
   transform: translateX(-50%);
   display: flex; flex-direction: column;
-  align-items: center; gap: 8px; z-index: 3; cursor: pointer;
+  align-items: center; z-index: 3; cursor: pointer;
+  animation: cue-pulse 1.8s ease-in-out infinite;
 }
-.scroll-cue__label {
-  font-size: .62rem; font-weight: 500;
-  letter-spacing: .2em; text-transform: uppercase;
-  color: rgba(255,255,255,.35);
+@keyframes cue-pulse {
+  0%, 100% { opacity: .3; transform: translateX(-50%) translateY(-3px); }
+  50%       { opacity: 1;  transform: translateX(-50%) translateY(3px); }
 }
-.scroll-cue__line {
-  width: 1px; height: 40px;
-  background: rgba(255,255,255,.15);
-  position: relative; overflow: hidden;
-}
-.scroll-cue__line::after {
-  content: ''; position: absolute;
-  top: -100%; left: 0; width: 100%; height: 100%;
-  background: rgba(255,255,255,.6);
-  animation: scrollline 1.6s ease-in-out infinite;
-}
-@keyframes scrollline { 0% { top: -100%; } 100% { top: 100%; } }
 
 /* ══════════════════════════
    TICKER
@@ -263,10 +248,9 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .eyebrow {
   font-size: .68rem; font-weight: 500;
   letter-spacing: .2em; text-transform: uppercase;
-  color: var(--red); display: flex; align-items: center;
-  gap: 8px; margin-bottom: .6rem;
+  color: var(--red); margin-bottom: .6rem;
 }
-.eyebrow::before { content: ''; display: block; width: 16px; height: 1px; background: var(--red); }
+
 .about__label {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem; color: var(--charcoal);
@@ -299,6 +283,7 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   display: flex; align-items: center;
   justify-content: space-between;
   padding: 1.4rem 0; gap: 1rem; transition: all .2s;
+  cursor: pointer; text-decoration: none;
 }
 .svc-row:last-child { border-bottom: 1px solid #E8E5E2; }
 .svc-row:hover { background: var(--white); padding-left: .8rem; padding-right: .8rem; margin: 0 -.8rem; }
@@ -331,9 +316,9 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   font-size: .68rem; font-weight: 500;
   letter-spacing: .2em; text-transform: uppercase;
   color: rgba(255,255,255,.5);
-  display: flex; align-items: center; gap: 8px; margin-bottom: .8rem;
+  margin-bottom: .8rem;
 }
-.joinus__eyebrow::before { content: ''; display: block; width: 16px; height: 1px; background: rgba(255,255,255,.4); }
+
 .joinus__title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 4rem; color: #fff; line-height: .92; letter-spacing: .01em;
@@ -391,11 +376,10 @@ button { cursor: pointer; font-family: 'DM Sans', sans-serif; }
   font-size: .68rem; font-weight: 500;
   letter-spacing: .2em; text-transform: uppercase;
   color: rgba(255,255,255,.35);
-  display: flex; align-items: center; justify-content: center;
-  gap: 8px; margin-bottom: 1.5rem;
+  text-align: center; margin-bottom: 1.5rem;
 }
-.cta__eyebrow::before { content: ''; display: block; width: 16px; height: 1px; background: rgba(255,255,255,.25); }
-.cta__eyebrow::after  { content: ''; display: block; width: 16px; height: 1px; background: rgba(255,255,255,.25); }
+
+
 .cta__h2 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(3rem, 6vw, 6rem);
@@ -479,6 +463,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+
+
 <!-- NAV -->
 <nav class="nav" id="nav">
   <a href="/"><img class="nav__logo" src="https://static.wixstatic.com/media/f498e6_709089c635274ccca305e0341891f752~mv2.png" alt="Opus Media"></a>
@@ -519,8 +505,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="scroll-cue"
     onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})"
     aria-label="Scroll down">
-    <span class="scroll-cue__label">Scroll</span>
-    <div class="scroll-cue__line"></div>
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="6,10 14,18 22,10" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
   </div>
 </section>
 
@@ -533,12 +520,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="ticker-item">Web Architecture &amp; Optimization ✦</span>
     <span class="ticker-item ticker-item--red">Social Curation &amp; Amplification ✦</span>
     <span class="ticker-item">Multi-markets Digital Enablers ✦</span>
+    <span class="ticker-item ticker-item--red">Opus Sonar · Social Listening ✦</span>
     <span class="ticker-item ticker-item--red">Integrated Media Solution ✦</span>
     <span class="ticker-item">E-Commerce &amp; Performance Driver ✦</span>
     <span class="ticker-item ticker-item--red">Creative Communication Services ✦</span>
     <span class="ticker-item">Web Architecture &amp; Optimization ✦</span>
     <span class="ticker-item ticker-item--red">Social Curation &amp; Amplification ✦</span>
     <span class="ticker-item">Multi-markets Digital Enablers ✦</span>
+    <span class="ticker-item ticker-item--red">Opus Sonar · Social Listening ✦</span>
   </div>
 </div>
 
@@ -574,48 +563,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </button>
     </div>
     <div class="svc-list">
-      <div class="svc-row">
+      <a class="svc-row" href="/services/integrated-media">
         <div class="svc-row__left">
           <span class="svc-row__num">01</span>
           <span class="svc-row__title">Integrated Media Solution</span>
         </div>
-        <a class="svc-row__link" href="/services/integrated-media">→</a>
-      </div>
-      <div class="svc-row">
+        <span class="svc-row__link">→</span>
+      </a>
+      <a class="svc-row" href="/services/ecommerce">
         <div class="svc-row__left">
           <span class="svc-row__num">02</span>
           <span class="svc-row__title">E-Commerce &amp; Performance Driver</span>
         </div>
-        <a class="svc-row__link" href="/services/ecommerce">→</a>
-      </div>
-      <div class="svc-row">
+        <span class="svc-row__link">→</span>
+      </a>
+      <a class="svc-row" href="/services/creative">
         <div class="svc-row__left">
           <span class="svc-row__num">03</span>
           <span class="svc-row__title">Creative Communication Services</span>
         </div>
-        <a class="svc-row__link" href="/services/creative">→</a>
-      </div>
-      <div class="svc-row">
+        <span class="svc-row__link">→</span>
+      </a>
+      <a class="svc-row" href="/services/web">
         <div class="svc-row__left">
           <span class="svc-row__num">04</span>
           <span class="svc-row__title">Web Architecture &amp; Optimization</span>
         </div>
-        <a class="svc-row__link" href="/services/web">→</a>
-      </div>
-      <div class="svc-row">
+        <span class="svc-row__link">→</span>
+      </a>
+      <a class="svc-row" href="/services/social">
         <div class="svc-row__left">
           <span class="svc-row__num">05</span>
           <span class="svc-row__title">Social Curation &amp; Amplification</span>
         </div>
-        <a class="svc-row__link" href="/services/social">→</a>
-      </div>
-      <div class="svc-row">
+        <span class="svc-row__link">→</span>
+      </a>
+      <a class="svc-row" href="/services/multimarket">
         <div class="svc-row__left">
           <span class="svc-row__num">06</span>
           <span class="svc-row__title">Multi-markets Digital Enablers</span>
         </div>
-        <a class="svc-row__link" href="/services/multimarket">→</a>
-      </div>
+        <span class="svc-row__link">→</span>
+      </a>
+      <a class="svc-row" href="/sonar">
+        <div class="svc-row__left">
+          <span class="svc-row__num">07</span>
+          <span class="svc-row__title">Opus Sonar — Social Listening</span>
+        </div>
+        <span class="svc-row__link">→</span>
+      </a>
     </div>
   </div>
 </section>
