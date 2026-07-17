@@ -56,17 +56,17 @@ img{display:block;max-width:100%} a{text-decoration:none} button{cursor:pointer;
 .page-hero__watermark{position:absolute;bottom:-1rem;right:2rem;font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,9rem);color:rgba(0,0,0,.1);line-height:1;pointer-events:none;user-select:none;letter-spacing:.02em;text-align:right;max-width:60%}
 .page-hero__content{position:relative;z-index:2;max-width:1100px;width:100%;margin:0 auto}
 .page-hero__num{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.2em;color:rgba(255,255,255,.35);margin-bottom:.8rem}
-.page-hero__eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:10px;margin-bottom:1rem}
-.page-hero__eyebrow::before{content:'';display:block;width:24px;height:1px;background:rgba(255,255,255,.4)}
+.page-hero__eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1rem}
+.page-hero__eyebrow::before{display:none}
 .page-hero__h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.92;letter-spacing:.01em;color:#fff;margin-bottom:.8rem;max-width:700px}
 .page-hero__sub{font-size:.95rem;line-height:1.75;color:rgba(255,255,255,.6);max-width:480px}
 .overview{background:var(--white);padding:6rem 3rem}
-.overview__inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:5rem;align-items:center}
-.eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:.6rem}
-.eyebrow::before{content:'';display:block;width:16px;height:1px;background:var(--red)}
+.overview__inner{max-width:1100px;margin:0 auto;max-width:720px}
+.eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem}
+.eyebrow::before{display:none}
 .overview__title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--charcoal);line-height:.95;letter-spacing:.01em;margin-bottom:1.5rem}
 .overview__body{font-size:1rem;line-height:1.9;color:#555;margin-bottom:2rem}
-.overview__visual{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--off-white);padding:3rem 2rem;position:relative;overflow:hidden}
+.overview__visual{display:none}
 .overview__big-num{font-family:'Bebas Neue',sans-serif;font-size:7rem;color:var(--red);line-height:1;letter-spacing:.02em;opacity:.12;position:absolute;bottom:-1rem;right:1rem}
 .overview__svg{width:100%;max-width:240px}
 .capabilities{background:var(--off-white);padding:6rem 3rem}
@@ -83,7 +83,7 @@ img{display:block;max-width:100%} a{text-decoration:none} button{cursor:pointer;
 .process__inner{max-width:1100px;margin:0 auto}
 .process__title{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:#fff;line-height:.95;letter-spacing:.01em;margin-bottom:3.5rem}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
-.steps::before{content:'';position:absolute;top:2rem;left:calc(16.66% + 1rem);right:calc(16.66% + 1rem);height:1px;background:rgba(255,255,255,.1)}
+.steps::before{display:none}
 .step{padding:0 2rem 0 0;position:relative}
 .step__num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:var(--red);opacity:.35;line-height:1;margin-bottom:1.5rem}
 .step__title{font-size:.95rem;font-weight:600;color:#fff;margin-bottom:.6rem}
@@ -243,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="process">
   <div class="process__inner">
-    <div class="eyebrow" style="color:rgba(220,160,150,.7)">How we work</div>
+    <div class="eyebrow" style="color:rgba(220,160,150,.7);margin-bottom:.6rem">How we work</div>
     <h2 class="process__title">Our Process</h2>
     <div class="steps">
       <div class="step">
