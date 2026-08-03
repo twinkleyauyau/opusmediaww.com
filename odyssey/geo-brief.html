@@ -176,7 +176,7 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
 
 <section>
   <div class="shead"><span class="num">02</span><h2 id="h_scope">What should the Scan measure?</h2></div>
-  <p class="note scan-only"><b>Pick one.</b> We are offering one category per free Scan. Only tick more if the client has said something specific matters to them.</p>
+  <p class="note scan-only"><b>Pick one.</b> We are offering one category per free Scan. Only tick more if the client has said something specific matters to them. Parts 1 &amp; 2 (the site technical layers) are included free regardless — this choice only sets the Part 3 category.</p>
   <p class="note audit-only">A paid Audit covers <b>all five</b>. Untick a category only if the client has explicitly ruled it out — the weighting assumes all five are present.</p>
   <div id="cats">
     <label class="check"><input type="checkbox" value="A — Accuracy"><span>A — Accuracy<span class="cd">Is what AI says about prices, specs and terms correct?</span></span></label>
@@ -224,8 +224,8 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
   <p class="note"><b>Please align with the client.</b> List everyone they name; the team selects which go into the panel.</p>
   <div class="f">
     <label>Competitors, one per line
-      <span class="hint">Scan uses 2–3, Audit uses 3–5. List more than that if the client names more.</span></label>
-    <textarea id="comps" placeholder="Nike&#10;Adidas&#10;New Balance&#10;Asics&#10;Hoka" style="min-height:86px"></textarea>
+      <span class="hint">One per line, <b>name then domain</b>. Club and chain names repeat across cities — without a domain we may measure the wrong company. Scan uses 2–3, Audit 3–5.</span></label>
+    <textarea id="comps" placeholder="Adidas — www.adidas.com.hk&#10;Nike — www.nike.com/hk&#10;New Balance — www.newbalance.com.hk" style="min-height:86px"></textarea>
   </div>
 </section>
 
@@ -276,13 +276,13 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
   </div>
   <div class="f">
     <label>Name variations to treat as one brand
-      <span class="hint">Separate with commas. Include the Chinese name, abbreviations, old names and sub-domains. Without this the tool counts one company as three and every number comes out too low.</span></label>
-    <textarea id="alias" placeholder="Skechers, 斯凱奇, skechers.com.hk, Skechers Hong Kong"></textarea>
+      <span class="hint">Separate with commas. Chinese name, abbreviations, old names. No need to repeat the domain — it is captured above. Without this the tool counts one company as three and every number comes out too low.</span></label>
+    <textarea id="alias" placeholder="Skechers, 斯凱奇, Skechers Hong Kong"></textarea>
   </div>
 </section>
 
 <section class="audit-only">
-  <div class="shead"><span class="num">06</span><h2>Facts worth checking</h2></div>
+  <div class="shead"><span class="num" id="n_facts">06</span><h2>Facts worth checking</h2></div>
   <p class="note">Audit only. Accuracy questions need the client's official answer on file — otherwise we can report that engines contradict each other, but not that <b>AI is wrong</b>.</p>
   <div class="f">
     <label>Claims AI might get wrong
@@ -388,6 +388,9 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
       L.push('  Audience:             '+or(v('aud2')));
       L.push('  Scan covers one audience, one panel.');
     }
+    L.push('  Persona clauses: Odyssey to draft concrete archetypes from');
+    L.push('  the site at analysis stage — the audience line above is not');
+    L.push('  specific enough to write a persona prompt from.');
     L.push('');
 
     L.push('COMPETITORS (client-named)');
@@ -426,9 +429,14 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
     } else L.push('  (none supplied — confirm before running)');
     L.push('');
 
-    L.push('WEIGHTING  '+(W[ind]||'to be set by the Odyssey team'));
-    L.push('  Declared before the run. Weights set the SCORE;');
-    L.push('  client priorities set the REMEDIATION ORDER only.');
+    if(A){
+      L.push('WEIGHTING  '+(W[ind]||'to be set by the Odyssey team'));
+      L.push('  Declared before the run. Weights set the SCORE;');
+      L.push('  client priorities set the REMEDIATION ORDER only.');
+    }else{
+      L.push('WEIGHTING  Not applied — Scan produces no score.');
+      L.push('  ('+(W[ind]||'industry weighting')+' is paid-tier only.)');
+    }
     L.push('');
 
     L.push('PANEL');
@@ -436,9 +444,10 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
       L.push('  '+(c.length*8)+' prompts — 8 per category, '+(c.length||0)+' categor'+(c.length===1?'y':'ies'));
       L.push('  3 repeats per prompt; report median, record flips');
     }else{
-      L.push('  Per selected category — 4 pure + 1 persona pair');
-      L.push('  Plus 5 entity probes (diagnostic, never scored)');
-      L.push('  No scoring, no cause analysis, no remediation');
+      L.push('  8 prompts — 4 pure + 2 persona pairs');
+      L.push('  Plus 5 entity probes (diagnostic, unscored — these DO name');
+      L.push('  the brand; the 8 scored prompts never do)');
+      L.push('  No scoring applied');
     }
     L.push('  [ ] Disambiguation checked — every scored prompt carries');
     L.push('      its own category + location context');
@@ -457,19 +466,36 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
     var n=lines('notes');
     if(n.length){L.push('NOTES');n.forEach(function(x){L.push('  '+x)});L.push('')}
 
+    L.push('PARTS 1 & 2');
+    L.push('  Odyssey selects all pages to sample from the site.');
+    L.push('  Ordered fix list with verification criteria IS included free.');
+    L.push('  Fix list is grouped by ISSUE, never one row per page.');
+    L.push('    One row per issue = what to fix, how many pages affected,');
+    L.push('    2-3 worst pages named as examples, how to verify.');
+    L.push('    Ordered by severity, then by pages affected.');
+    L.push('    Reason: a 200-page site would otherwise produce a list');
+    L.push('    nobody reads. Full page-level detail goes in an appendix.');
+    L.push('');
     L.push('MERGE RULE FOR THE EXPORTS');
     L.push('  All engines from the '+or(mk[0]||'','PRIMARY')+' export.');
     L.push('  ChatGPT from the '+or(v('ref'),'REFERENCE')+' export only, labelled indicative.');
     L.push('  Discard '+or(v('ref'),'REFERENCE')+' rows for every other engine.');
     L.push('  Position = index of first matching entity in the Brands column.');
     L.push('');
-    L.push('OUTPUT RULES');
+    L.push('OUTPUT RULES  (Part 3 only — Parts 1 & 2 keep their ordered fix list)');
     L.push('  - Reference-market engine always footnoted, never blended');
     L.push('    into a headline number');
     if(!A){
-      L.push('  - No remediation, no cause analysis');
+      L.push('  - Parts 1 & 2: ordered fix list IS included, with');
+      L.push('    verification criteria. This is the free deliverable.');
+      L.push('  - Part 3: presence numbers only. No scoring, no cause');
+      L.push('    analysis, no remediation for AI perception.');
+      L.push('  - Script: generic, English and Traditional Chinese, in the');
+      L.push('    speaker notes. Do NOT produce a separate TC script.');
       L.push('  - Closing line, verbatim:');
-      L.push('    "This report tells you how much. It does not tell you why."');
+      L.push('    "We have told you what to fix on your site, and how');
+      L.push('     much of the AI conversation you are missing. We have');
+      L.push('     not told you why AI describes you the way it does."');
     }
     L.push('  - Record engine set and run date on the final page');
     return L.join('\n');
@@ -490,6 +516,7 @@ button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
     $('n_aud').textContent   = '03';
     $('n_comp').textContent  = '04';
     $('n_mkt').textContent   = '05';
+    $('n_facts').textContent = '06';
     $('n_notes').textContent = A?'07':'06';
     if(A){
       var n1=lines('mkts').length||1, n2=lines('langs').length||1;
