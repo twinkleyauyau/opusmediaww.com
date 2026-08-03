@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>GEO Brief — Opus Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#5C1A1A;
+  --crimson:#8A1A1A;
+  --paper:#F7F4F0;
+  --char:#24211F;
+  --mute:#8A837C;
+  --line:#DDD6CE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--char);
+  font:400 16px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+.wrap{max-width:1520px;margin:0 auto;padding:0 34px}
+
+.shell{max-width:1520px;margin:0 auto;padding:0 34px;
+  display:grid;grid-template-columns:minmax(0,1fr) 560px;gap:40px;align-items:start}
+.col-form{min-width:0;padding-bottom:60px}
+
+.out{position:sticky;top:18px;background:var(--char);color:var(--paper);border-radius:2px}
+.out-in{padding:16px 18px}
+@media(max-width:1260px){
+  .shell{display:block;padding-bottom:0}
+  .col-form{padding-bottom:20px}
+  .out{position:sticky;top:auto;bottom:0;margin:34px -28px 0;border-radius:0;z-index:5}
+  .out-in{max-width:1520px;margin:0 auto;padding:18px 34px}
+}
+@media(max-width:620px){
+  .wrap,.shell{padding:0 18px}
+  .out{margin:34px -20px 0}
+  .out-in{padding:16px 20px}
+}
+
+header{background:var(--red);color:var(--paper);padding:22px 0 20px;margin-bottom:26px}
+.eyebrow{font:500 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.22em;
+  text-transform:uppercase;opacity:.72;margin-bottom:9px}
+h1{font:400 clamp(28px,4vw,38px)/0.94 Anton,sans-serif;letter-spacing:.01em;text-transform:uppercase}
+
+section{margin-bottom:26px}
+.shead{display:flex;align-items:baseline;gap:11px;margin-bottom:4px;
+  border-bottom:2px solid var(--char);padding-bottom:6px}
+.num{font:500 12px/1 "IBM Plex Mono",monospace;color:var(--crimson);letter-spacing:.1em;padding-top:3px}
+h2{font:600 17px/1.2 "IBM Plex Sans",sans-serif;letter-spacing:-.01em}
+.note{font-size:13px;color:var(--mute);margin:9px 0 13px;max-width:74ch}
+.note b{color:var(--crimson);font-weight:600}
+
+.f{margin-bottom:13px}
+label{display:block;font:500 11.5px/1 "IBM Plex Mono",monospace;
+  letter-spacing:.09em;text-transform:uppercase;margin-bottom:6px}
+.hint{font:400 12.5px/1.4 "IBM Plex Sans",sans-serif;color:var(--mute);
+  letter-spacing:0;text-transform:none;margin-top:3px}
+input[type=text],input[type=date],textarea{
+  width:100%;padding:9px 12px;background:#fff;color:var(--char);
+  border:1px solid var(--line);border-radius:2px;font:400 15px/1.4 "IBM Plex Sans",sans-serif}
+textarea{resize:vertical;min-height:64px}
+input:focus,textarea:focus{outline:2px solid var(--crimson);outline-offset:1px;border-color:transparent}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.row>.f{display:flex;flex-direction:column}
+.row>.f>label{flex:1 0 auto}
+.row>.f>input,.row>.f>textarea{margin-top:auto}
+body:not(.is-audit) .row.audit-only{display:none}
+body:not(.is-audit) .row.aud-row{grid-template-columns:1fr}
+body.is-audit .row.audit-only{display:grid}
+body.is-audit .row.scan-only{display:none}
+@media(max-width:620px){.row{grid-template-columns:1fr}}
+
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;left:0;top:0;margin:0}
+.chip span{display:block;padding:7px 13px;background:#fff;border:1px solid var(--line);
+  border-radius:2px;font-size:14px;cursor:pointer;transition:.12s}
+.chip input:checked+span{background:var(--red);border-color:var(--red);color:var(--paper);font-weight:500}
+.chip input:focus-visible+span{outline:2px solid var(--crimson);outline-offset:2px}
+
+.check{display:flex;align-items:flex-start;gap:9px;padding:7px 0;
+  border-bottom:1px solid var(--line);cursor:pointer}
+.check:last-child{border-bottom:0}
+.check input{width:17px;height:17px;margin-top:2px;accent-color:var(--red);flex:none}
+.check span{font-size:14px;line-height:1.35}
+.check .cd{display:block;font-size:12px;color:var(--mute);margin-top:1px}
+
+.audit-only{display:none}
+body.is-audit .audit-only{display:block}
+#panelcount{background:#EFE9E2;border-left:3px solid var(--crimson);padding:11px 14px;
+  align-items:center;gap:16px}
+body.is-audit #panelcount{display:flex}
+#panelcount label{margin-bottom:3px}
+#pcount{font:400 30px/0.9 Anton,sans-serif;letter-spacing:.02em}
+#pmath{margin-top:0;flex:1}
+body.is-audit .scan-only{display:none}
+.other-in{display:none;margin-top:10px}
+body.is-other .other-in{display:block}
+
+.out h3{font:600 12.5px/1 "IBM Plex Sans";letter-spacing:.04em;margin-bottom:10px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px}
+pre{background:#151312;padding:13px 15px;border-radius:2px;overflow:auto;max-height:340px;min-height:0;
+  font:400 11.5px/1.5 "IBM Plex Mono",monospace;white-space:pre-wrap;word-break:break-word}
+.btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+button{flex:1 1 auto;white-space:nowrap}
+button{font:500 13px/1 "IBM Plex Sans";padding:9px 14px;border:0;border-radius:2px;
+  cursor:pointer;transition:.12s}
+.b1{background:var(--paper);color:var(--char)}
+.b1:hover{background:#fff}
+.b2{background:transparent;color:var(--paper);border:1px solid #4A4540}
+.b2:hover{border-color:var(--paper)}
+button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+.saved{font:400 12px/1 "IBM Plex Mono",monospace;color:#7FB89A;opacity:0;transition:.25s}
+.saved.on{opacity:1}
+@media(max-width:1120px){pre{max-height:180px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Opus Odyssey · AI Visibility</div>
+    <h1>GEO Brief</h1>
+  </div>
+</header>
+
+<div class="shell">
+<main class="col-form">
+
+<section>
+  <div class="shead"><span class="num">01</span><h2>The client</h2></div>
+  <div class="row">
+    <div class="f"><label>Client name</label><input type="text" id="client" placeholder="Skechers Hong Kong"></div>
+    <div class="f"><label>Main website</label><input type="text" id="domain" placeholder="www.skechers.com.hk"></div>
+  </div>
+  <div class="row">
+    <div class="f"><label>Submitted by</label><input type="text" id="by"></div>
+    <div class="f"><label>Date</label><input type="date" id="date"></div>
+  </div>
+  <div class="f">
+    <label>Industry</label>
+    <div class="chips" id="industry">
+      <span class="chip"><input type="radio" name="ind" value="Retail &amp; e-commerce"><span>Retail / E-commerce</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Consumer brand"><span>Consumer brand</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Education"><span>Education</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Financial services"><span>Financial services</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Healthcare &amp; pharma"><span>Healthcare / Pharma</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Technology &amp; SaaS"><span>Technology / SaaS</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Professional services"><span>Professional services</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Hospitality &amp; travel"><span>Hospitality / Travel</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Property &amp; real estate"><span>Property</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Public sector / place brand"><span>Public / Place</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Non-profit / NGO"><span>Non-profit / NGO</span></span>
+      <span class="chip"><input type="radio" name="ind" value="Other"><span>Other</span></span>
+    </div>
+    <div class="other-in">
+      <input type="text" id="indother" placeholder="Describe the industry — the team will set weighting for it">
+      <div class="hint">New industries don't have a weighting yet. Describe it and the Odyssey team will set one.</div>
+    </div>
+  </div>
+  <div class="f">
+    <label>Which are we running?</label>
+    <div class="chips" id="tier">
+      <span class="chip"><input type="radio" name="tier" value="Scan" checked><span>Scan — free</span></span>
+      <span class="chip"><input type="radio" name="tier" value="Audit"><span>Audit — paid</span></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="num">02</span><h2 id="h_scope">What should the Scan measure?</h2></div>
+  <p class="note scan-only"><b>Pick one.</b> We are offering one category per free Scan. Only tick more if the client has said something specific matters to them.</p>
+  <p class="note audit-only">A paid Audit covers <b>all five</b>. Untick a category only if the client has explicitly ruled it out — the weighting assumes all five are present.</p>
+  <div id="cats">
+    <label class="check"><input type="checkbox" value="A — Accuracy"><span>A — Accuracy<span class="cd">Is what AI says about prices, specs and terms correct?</span></span></label>
+    <label class="check"><input type="checkbox" value="B — Brand"><span>B — Brand<span class="cd">What words does AI use about the brand, and where does it send their customers?</span></span></label>
+    <label class="check"><input type="checkbox" value="C — Comparison"><span>C — Comparison<span class="cd">Who wins when AI is asked them versus a rival directly?</span></span></label>
+    <label class="check"><input type="checkbox" value="D — Discovery" checked><span>D — Discovery<span class="cd">Do they appear at all when nobody names them?<span class="scan-only"> Default — leave this one if unsure.</span></span></span></label>
+    <label class="check"><input type="checkbox" value="E — Evidence"><span>E — Evidence<span class="cd">Which reviews, rankings and third parties does AI quote?</span></span></label>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="num" id="n_aud">03</span><h2>Who are we measuring for?</h2></div>
+  <p class="note scan-only">A free Scan covers <b>one audience</b>. Pick the one the client cares most about volume-wise.</p>
+  <p class="note audit-only">One client is not always one report. <b>If two audiences would ask completely different questions, that's two separate panels</b> — and two lines on the quote. Skechers performance running and Skechers kids' school shoes are two, not one.</p>
+  <div class="f">
+    <label>Product or range being measured
+      <span class="hint">One offer, not the whole company</span></label>
+    <input type="text" id="product" placeholder="Walking and comfort footwear">
+  </div>
+  <div class="row aud-row">
+    <div class="f audit-only">
+      <label>Most valuable customer
+        <span class="hint">Worth the most per sale. We test whether AI still recommends the client once this person describes themselves.</span></label>
+      <input type="text" id="aud1" placeholder="Runners buying performance shoes, HK$1,200+">
+    </div>
+    <div class="f">
+      <label>Most common customer
+        <span class="hint">Where the bulk of sales come from</span></label>
+      <input type="text" id="aud2" placeholder="Comfort-first walkers, 45+">
+    </div>
+  </div>
+  <div class="f audit-only">
+    <label>Would those two ask completely different questions?</label>
+    <div class="chips">
+      <span class="chip"><input type="radio" name="split" value="Yes — separate panels"><span>Yes</span></span>
+      <span class="chip"><input type="radio" name="split" value="No — one panel covers both" checked><span>No</span></span>
+      <span class="chip"><input type="radio" name="split" value="Not sure — team to scope"><span>Not sure</span></span>
+    </div>
+    <div class="hint">Yes doubles the panel count below.</div>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="num" id="n_comp">04</span><h2>Competitors</h2></div>
+  <p class="note"><b>Please align with the client.</b> List everyone they name; the team selects which go into the panel.</p>
+  <div class="f">
+    <label>Competitors, one per line
+      <span class="hint">Scan uses 2–3, Audit uses 3–5. List more than that if the client names more.</span></label>
+    <textarea id="comps" placeholder="Nike&#10;Adidas&#10;New Balance&#10;Asics&#10;Hoka" style="min-height:86px"></textarea>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="num" id="n_mkt">05</span><h2>Markets and language</h2></div>
+
+  <p class="note scan-only">A free Scan covers <b>one market in one language</b>. If the client wants more, that's an Audit.</p>
+
+  <p class="note audit-only"><b>One market in one language = one panel.</b> We price per panel, so more markets and more languages means a bigger quote — please confirm with the client before quoting.</p>
+
+  <div class="row scan-only">
+    <div class="f">
+      <label>Market
+        <span class="hint">Where their buyers actually search. One only.</span></label>
+      <input type="text" id="mkt1" placeholder="Hong Kong" value="Hong Kong">
+    </div>
+    <div class="f">
+      <label>Language
+        <span class="hint">One only. If buyers search in Chinese, an English panel measures a surface they never touch.</span></label>
+      <input type="text" id="lang1" placeholder="English" value="English">
+    </div>
+  </div>
+
+  <div class="row audit-only">
+    <div class="f">
+      <label>Markets, one per line
+        <span class="hint">Most important first. Each one is a separate panel.</span></label>
+      <textarea id="mkts" placeholder="Hong Kong&#10;Singapore&#10;Taiwan"></textarea>
+    </div>
+    <div class="f">
+      <label>Languages, one per line
+        <span class="hint">Each language is a separate panel again, in every market.</span></label>
+      <textarea id="langs" placeholder="English&#10;Traditional Chinese"></textarea>
+    </div>
+  </div>
+  <div class="f audit-only" id="panelcount">
+    <div>
+      <label>Panels</label>
+      <div id="pcount">—</div>
+    </div>
+    <div class="hint" id="pmath">Markets x languages. Audiences may multiply this again — the team confirms.</div>
+  </div>
+
+  <div class="f">
+    <label>Reference market for ChatGPT
+      <span class="hint">Only needed when the market blocks ChatGPT. Singapore is the usual stand-in for Hong Kong. Not a separate panel — it fills one gap.</span></label>
+    <input type="text" id="ref" placeholder="Singapore" value="Singapore">
+  </div>
+  <div class="f">
+    <label>Name variations to treat as one brand
+      <span class="hint">Separate with commas. Include the Chinese name, abbreviations, old names and sub-domains. Without this the tool counts one company as three and every number comes out too low.</span></label>
+    <textarea id="alias" placeholder="Skechers, 斯凱奇, skechers.com.hk, Skechers Hong Kong"></textarea>
+  </div>
+</section>
+
+<section class="audit-only">
+  <div class="shead"><span class="num">06</span><h2>Facts worth checking</h2></div>
+  <p class="note">Audit only. Accuracy questions need the client's official answer on file — otherwise we can report that engines contradict each other, but not that <b>AI is wrong</b>.</p>
+  <div class="f">
+    <label>Claims AI might get wrong
+      <span class="hint">Only claims with one definite answer. Write the client's official answer after the dash. Be specific about what is being counted — "how many stores" can mean standalone shops, outlets or department store counters, and three different numbers are all correct. If the question is loose, AI can't be wrong and we can't score it.</span></label>
+    <textarea id="facts" placeholder="Standalone stores in HK — official answer: 47&#10;Total HK points of sale — official answer: 150+" style="min-height:110px"></textarea>
+  </div>
+</section>
+
+<section>
+  <div class="shead"><span class="num" id="n_notes">06</span><h2>Anything else</h2></div>
+  <div class="f">
+    <label>Context, sensitivities, deadlines</label>
+    <textarea id="notes" placeholder="Pitching 15 Aug. They're sensitive about the counterfeit listings issue."></textarea>
+  </div>
+</section>
+
+</main>
+
+<aside class="out">
+  <div class="out-in">
+    <h3><span>Share this with the Odyssey team</span><span class="saved" id="saved">saved</span></h3>
+    <pre id="pre">Fill in the form.</pre>
+    <div class="btns">
+      <button class="b1" id="copy">Copy</button>
+      <button class="b2" id="dl">Download .txt</button>
+      <button class="b2" id="clr">Clear</button>
+    </div>
+  </div>
+</aside>
+
+</div>
+
+<script>
+(function(){
+  var ids=['client','domain','by','date','indother','product','aud1','aud2',
+           'comps','mkt1','lang1','mkts','langs','ref','alias','facts','notes'];
+  var $=function(i){return document.getElementById(i)};
+  var KEY='odyssey_brief_v2';
+
+  function radio(n){var e=document.querySelector('input[name='+n+']:checked');return e?e.value:''}
+  function tier(){return radio('tier')||'Scan'}
+  function boxes(sel){return Array.prototype.slice.call(
+    document.querySelectorAll(sel+' input:checked')).map(function(c){return c.value})}
+  function v(i){return ($(i).value||'').trim()}
+  function or(s,d){return s?s:(d||'—')}
+  function lines(id){var t=v(id);return t?t.split('\n').map(function(x){return x.trim()}).filter(Boolean):[]}
+
+  var W={
+    'Retail & e-commerce':'A20 / B25 / C25 / D20 / E10',
+    'Consumer brand':'A20 / B25 / C25 / D20 / E10',
+    'Education':'A15 / B15 / C30 / D30 / E10',
+    'Financial services':'A30 / B25 / C15 / D15 / E15',
+    'Healthcare & pharma':'A30 / B25 / C15 / D15 / E15',
+    'Technology & SaaS':'A15 / B20 / C30 / D25 / E10',
+    'Professional services':'A20 / B20 / C25 / D20 / E15',
+    'Hospitality & travel':'A15 / B20 / C20 / D25 / E20',
+    'Property & real estate':'A25 / B20 / C20 / D25 / E10',
+    'Public sector / place brand':'A30 / B15 / C20 / D10 / E25',
+    'Non-profit / NGO':'A20 / B25 / C10 / D20 / E25'
+  };
+
+  function build(){
+    var t=tier(), ind=radio('ind'), A=(t==='Audit');
+    var indTxt = (ind==='Other') ? ('Other — '+or(v('indother'),'not described')) : or(ind);
+    var L=[];
+    L.push('OPUS ODYSSEY — GEO BRIEF');
+    L.push('========================');
+    L.push('');
+    L.push('Client:        '+or(v('client')));
+    L.push('Domain:        '+or(v('domain')));
+    L.push('Industry:      '+indTxt);
+    L.push('Tier:          Odyssey '+t+(A?' (paid)':' (free)'));
+    L.push('Submitted by:  '+or(v('by'))+'   Date: '+or(v('date')));
+    L.push('');
+
+    var c=boxes('#cats');
+    L.push(A?'AUDIT SCOPE':'SCAN SCOPE');
+    if(c.length)c.forEach(function(x){L.push('  '+x)});
+    else L.push(A?'  (none selected — confirm scope)':'  (none selected — defaults to D — Discovery)');
+    if(A){
+      if(c.length<5){
+        L.push('  NOTE: '+(5-c.length)+' categor'+(c.length===4?'y':'ies')+' excluded.');
+        L.push('        Weighting assumes all five — team to re-weight.');
+      }
+    }else{
+      if(c.length>1){
+        L.push('  NOTE: '+c.length+' categories selected. Free Scan covers');
+        L.push('        one category. Confirm before running.');
+      }else if(c.length===1 && c[0].charAt(0)!=='D'){
+        L.push('  NOTE: non-default category. Cross-client benchmark');
+        L.push('        applies to Discovery only.');
+      }
+    }
+    L.push('');
+
+    L.push('AUDIT UNIT');
+    L.push('  Product / range:      '+or(v('product')));
+    if(A){
+      L.push('  Highest-value aud.:   '+or(v('aud1'))+'   -> persona pair 1');
+      L.push('  Highest-volume aud.:  '+or(v('aud2'))+'   -> persona pair 2');
+      L.push('  Different questions:  '+or(radio('split')));
+    }else{
+      L.push('  Audience:             '+or(v('aud2')));
+      L.push('  Scan covers one audience, one panel.');
+    }
+    L.push('');
+
+    L.push('COMPETITORS (client-named)');
+    var cp=lines('comps');
+    if(cp.length)cp.forEach(function(x,i){L.push('  '+(i+1)+'. '+x)});else L.push('  —');
+    L.push('');
+
+    var mk = A ? lines('mkts') : (v('mkt1')?[v('mkt1')]:[]);
+    var lg = A ? lines('langs') : (v('lang1')?[v('lang1')]:[]);
+    L.push('MARKETS AND LANGUAGES');
+    if(mk.length)mk.forEach(function(x,i){
+      L.push('  Market '+(i+1)+':  '+x+(i===0?'   (primary — the measurement)':'')) });
+    else L.push('  Market:  —');
+    if(lg.length)lg.forEach(function(x,i){L.push('  Language '+(i+1)+':  '+x)});
+    else L.push('  Language:  —');
+    if(A){
+      var n1=mk.length||1, n2=lg.length||1, n3=(radio('split').indexOf('Yes')===0?2:1);
+      var mathTxt=n1+' market'+(n1>1?'s':'')+' x '+n2+' language'+(n2>1?'s':'')
+        +(n3>1?' x 2 audiences':'');
+      L.push('  PANELS: '+mathTxt+' = '+(n1*n2*n3));
+      L.push('          Priced per panel.'
+        +(radio('split').indexOf('Not sure')===0?' Audience split unconfirmed — team to scope.':''));
+    }else{
+      L.push('  Scan covers one market in one language.');
+    }
+    L.push('  ChatGPT reference:  '+or(v('ref'))+'   (indicative, never blended)');
+    L.push('');
+
+    L.push('ENTITY MATCH KEYS');
+    var al=v('alias');
+    if(al){
+      al.split('\n').forEach(function(row){
+        row=row.trim(); if(!row)return;
+        L.push('  '+row.split(',').map(function(x){return x.trim()}).filter(Boolean).join(' | '));
+      });
+    } else L.push('  (none supplied — confirm before running)');
+    L.push('');
+
+    L.push('WEIGHTING  '+(W[ind]||'to be set by the Odyssey team'));
+    L.push('  Declared before the run. Weights set the SCORE;');
+    L.push('  client priorities set the REMEDIATION ORDER only.');
+    L.push('');
+
+    L.push('PANEL');
+    if(A){
+      L.push('  '+(c.length*8)+' prompts — 8 per category, '+(c.length||0)+' categor'+(c.length===1?'y':'ies'));
+      L.push('  3 repeats per prompt; report median, record flips');
+    }else{
+      L.push('  Per selected category — 4 pure + 1 persona pair');
+      L.push('  Plus 5 entity probes (diagnostic, never scored)');
+      L.push('  No scoring, no cause analysis, no remediation');
+    }
+    L.push('  [ ] Disambiguation checked — every scored prompt carries');
+    L.push('      its own category + location context');
+    L.push('  [ ] Persona pairs checked — baseline and persona identical');
+    L.push('      except the persona clause; both carry category + location');
+    L.push('');
+
+    if(A){
+      L.push('GROUND TRUTH FOR CATEGORY A');
+      var f=lines('facts');
+      if(f.length)f.forEach(function(x){L.push('  '+x)});
+      else L.push('  (not yet supplied — needed before claiming AI is wrong)');
+      L.push('');
+    }
+
+    var n=lines('notes');
+    if(n.length){L.push('NOTES');n.forEach(function(x){L.push('  '+x)});L.push('')}
+
+    L.push('MERGE RULE FOR THE EXPORTS');
+    L.push('  All engines from the '+or(mk[0]||'','PRIMARY')+' export.');
+    L.push('  ChatGPT from the '+or(v('ref'),'REFERENCE')+' export only, labelled indicative.');
+    L.push('  Discard '+or(v('ref'),'REFERENCE')+' rows for every other engine.');
+    L.push('  Position = index of first matching entity in the Brands column.');
+    L.push('');
+    L.push('OUTPUT RULES');
+    L.push('  - Reference-market engine always footnoted, never blended');
+    L.push('    into a headline number');
+    if(!A){
+      L.push('  - No remediation, no cause analysis');
+      L.push('  - Closing line, verbatim:');
+      L.push('    "This report tells you how much. It does not tell you why."');
+    }
+    L.push('  - Record engine set and run date on the final page');
+    return L.join('\n');
+  }
+
+  var lastTier=null;
+  function render(){
+    var A=tier()==='Audit';
+    if(lastTier!==null && lastTier!==tier()){
+      var cbs=Array.prototype.slice.call(document.querySelectorAll('#cats input'));
+      if(A){ cbs.forEach(function(c){c.checked=true}); }
+      else { cbs.forEach(function(c){c.checked=(c.value.charAt(0)==='D')}); }
+    }
+    lastTier=tier();
+    $('h_scope').textContent = A?'What should the Audit measure?':'What should the Scan measure?';
+    document.body.classList.toggle('is-audit',A);
+    document.body.classList.toggle('is-other',radio('ind')==='Other');
+    $('n_aud').textContent   = '03';
+    $('n_comp').textContent  = '04';
+    $('n_mkt').textContent   = '05';
+    $('n_notes').textContent = A?'07':'06';
+    if(A){
+      var n1=lines('mkts').length||1, n2=lines('langs').length||1;
+      var n3=(radio('split').indexOf('Yes')===0?2:1);
+      $('pcount').textContent=(n1*n2*n3);
+      $('pmath').textContent=n1+' market'+(n1>1?'s':'')+' x '+n2+' language'+(n2>1?'s':'')
+        +(n3>1?' x 2 audiences':'')
+        +(radio('split').indexOf('Not sure')===0?'. Audience split unconfirmed — team to scope.':'.');
+    }
+    $('pre').textContent=build();
+    save();
+  }
+
+  function save(){
+    try{
+      var d={r:{}};
+      ids.forEach(function(i){d[i]=$(i).value});
+      ['ind','tier','split'].forEach(function(n){d.r[n]=radio(n)});
+      d.cats=boxes('#cats');
+      localStorage.setItem(KEY,JSON.stringify(d));
+      var s=$('saved');s.classList.add('on');
+      clearTimeout(window._t);window._t=setTimeout(function(){s.classList.remove('on')},1400);
+    }catch(e){}
+  }
+
+  function load(){
+    try{
+      var d=JSON.parse(localStorage.getItem(KEY)||'null'); if(!d)return;
+      ids.forEach(function(i){if(d[i]!=null)$(i).value=d[i]});
+      Object.keys(d.r||{}).forEach(function(n){
+        var e=document.querySelector('input[name='+n+'][value="'+d.r[n]+'"]'); if(e)e.checked=true});
+      if(d.cats){
+        Array.prototype.slice.call(document.querySelectorAll('#cats input')).forEach(function(c){
+          c.checked = d.cats.indexOf(c.value)>-1});
+      }
+      lastTier=(d.r&&d.r.tier)||'Scan';
+
+    }catch(e){}
+  }
+
+  load();
+  if(!$('date').value)$('date').value=new Date().toISOString().slice(0,10);
+  document.addEventListener('input',render);
+  document.addEventListener('change',render);
+
+  $('copy').onclick=function(){
+    var t=build(),b=this;
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,done)}
+    else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);
+      a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()}
+  };
+  $('dl').onclick=function(){
+    var n=(v('client')||'client').replace(/[^a-z0-9]+/gi,'-').toLowerCase();
+    var u=URL.createObjectURL(new Blob([build()],{type:'text/plain'}));
+    var a=document.createElement('a');a.href=u;a.download='geo-brief-'+n+'.txt';a.click();
+    URL.revokeObjectURL(u);
+  };
+  $('clr').onclick=function(){
+    if(!confirm('Clear the form? This cannot be undone.'))return;
+    try{localStorage.removeItem(KEY)}catch(e){}
+    location.reload();
+  };
+  render();
+})();
+</script>
+</body>
+</html>
