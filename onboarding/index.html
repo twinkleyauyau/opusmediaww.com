@@ -125,7 +125,7 @@ body{background:#fff;color:#000}.top-actions,.sig-acts,.tabs,aside,.rail{display
           <label for="f-email">Email</label>
           <input class="field" id="f-email" placeholder="e.g. twinkle.chan@opusmediaww.com">
           <label for="f-phone">Mobile</label>
-          <input class="field" id="f-phone" placeholder="e.g. +852 53456758">
+          <input class="field" id="f-phone" placeholder="e.g. +852 23456789">
           <label for="f-office">Office</label>
           <select class="field" id="f-office">
             <option value="hk">Hong Kong</option>
@@ -249,7 +249,7 @@ function person(){
     name:  has ? (fv+" "+lv).trim() : "Twinkle Chan",
     title: $("f-title").value.trim()||"Digital Director",
     email: $("f-email").value.trim()||"twinkle.chan@opusmediaww.com",
-    phone: $("f-phone").value.trim()||"+852 53456758",
+    phone: $("f-phone").value.trim()||"+852 23456789",
     office:o, officeLabel:OFFICES[o].label, addr:OFFICES[o].addr,
     start:$("f-start").value
   };
@@ -388,8 +388,19 @@ function render(){
     <div>${p.start?esc(fmt(p.start)):"No start date set"}</div></div>`;
 }
 
+const FORM_KEY = "om_onboard_form";
+function saveForm(){
+  const d={}; ["f-first","f-last","f-title","f-email","f-phone","f-office","f-start"].forEach(id=>d[id]=$(id).value);
+  try{ localStorage.setItem(FORM_KEY, JSON.stringify(d)); }catch{}
+}
+function loadForm(){
+  let d; try{ d=JSON.parse(localStorage.getItem(FORM_KEY)||"{}"); }catch{ d={}; }
+  ["f-first","f-last","f-title","f-email","f-phone","f-office","f-start"].forEach(id=>{ if(d[id]!=null && d[id]!=="") $(id).value=d[id]; });
+}
+loadForm();
 ["f-first","f-last","f-title","f-email","f-phone","f-office","f-start"].forEach(id=>{
-  $(id).addEventListener("input",render); $(id).addEventListener("change",render);
+  $(id).addEventListener("input",()=>{ saveForm(); render(); });
+  $(id).addEventListener("change",()=>{ saveForm(); render(); });
 });
 render();
 </script>
