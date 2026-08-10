@@ -37,6 +37,7 @@ header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:2
 label{display:block;font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 6px}
 .field{width:100%;padding:11px 12px;background:var(--surface-2);border:1px solid var(--line);margin-bottom:14px;outline:none}
 .field:focus{border-color:var(--accent-glow)}
+.field::placeholder{color:var(--ink-dim);opacity:.75}
 .rail{height:4px;background:var(--surface-2);overflow:hidden;margin:0 0 30px}
 .rail-fill{height:100%;width:0;background:var(--accent);transition:width .6s var(--ease);position:relative}
 .rail-fill::after{content:'';position:absolute;inset:0;left:auto;width:38px;background:linear-gradient(90deg,transparent,var(--accent-glow))}
@@ -113,14 +114,16 @@ body{background:#fff;color:#000}.top-actions,.sig-acts,.tabs,aside,.rail{display
       <div class="panel">
         <h3>New joiner</h3>
         <div class="pb">
-          <label for="f-name">Full name</label>
-          <input class="field" id="f-name" value="Twinkle Chan">
+          <label for="f-first">First name</label>
+          <input class="field" id="f-first" placeholder="e.g. Twinkle">
+          <label for="f-last">Last name</label>
+          <input class="field" id="f-last" placeholder="e.g. Chan">
           <label for="f-title">Job title</label>
-          <input class="field" id="f-title" value="Digital Director">
+          <input class="field" id="f-title" placeholder="e.g. Digital Director">
           <label for="f-email">Email</label>
-          <input class="field" id="f-email" value="twinkle.chan@opusmediaww.com">
+          <input class="field" id="f-email" placeholder="e.g. twinkle.chan@opusmediaww.com">
           <label for="f-phone">Mobile</label>
-          <input class="field" id="f-phone" value="+852 53456758">
+          <input class="field" id="f-phone" placeholder="e.g. +852 53456758">
           <label for="f-office">Office</label>
           <select class="field" id="f-office">
             <option value="hk">Hong Kong</option>
@@ -154,7 +157,7 @@ body{background:#fff;color:#000}.top-actions,.sig-acts,.tabs,aside,.rail{display
      logo: "https://opusmediaww.com/sig/opus-logo.png"
    The logo below is a stand-in, not the real wordmark.
    ============================================================ */
-const C = { maroon:"#5c1a1a", ink:"#1a1a1a", grey:"#6f6a60" };
+const C = { maroon:"#521f1c", ink:"#424242", grey:"#424242" };
 
 const svg = s => "data:image/svg+xml;utf8," + encodeURIComponent(s);
 const ico = d => svg(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="${C.maroon}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`);
@@ -207,8 +210,8 @@ const LATER = {
 const TOOLS = [
   ["Fanpage Karma","Social benchmarking"],["Similarweb","Traffic + competitive"],
   ["Meta","Paid social"],["Google","Search + display"],["LinkedIn","B2B paid social"],
-  ["Yahoo DSP","Programmatic"],["TikTok","Paid social · SG owned"]
-];
+  ["Yahoo DSP","Programmatic"]
+]; // TikTok removed
 const RITUALS = [
   ["Opus Pitstop","Once a quarter","Company get-together — where the quarter gets talked through."],
   ["Breakfast Club","Twice a quarter","Morning session over breakfast."]
@@ -237,12 +240,14 @@ function keyFor(name, email){
 }
 function person(){
   const o=$("f-office").value;
+  const fv=$("f-first").value.trim(), lv=$("f-last").value.trim();
+  const has=fv||lv;
   return {
-    name:$("f-name").value.trim()||"New joiner",
-    first:($("f-name").value.trim()||"New joiner").split(/\s+/)[0],
-    title:$("f-title").value.trim()||"Job title",
-    email:$("f-email").value.trim()||"name@opusmediaww.com",
-    phone:$("f-phone").value.trim(),
+    first: fv || "Twinkle",
+    name:  has ? (fv+" "+lv).trim() : "Twinkle Chan",
+    title: $("f-title").value.trim()||"Digital Director",
+    email: $("f-email").value.trim()||"twinkle.chan@opusmediaww.com",
+    phone: $("f-phone").value.trim()||"+852 53456758",
     office:o, officeLabel:OFFICES[o].label, addr:OFFICES[o].addr,
     start:$("f-start").value
   };
@@ -251,35 +256,37 @@ function fmt(d){return new Date(d+"T00:00:00").toLocaleDateString("en-GB",{weekd
 
 /* ---------- signatures (tables + inline styles: Outlook renders with Word) ---------- */
 function iconRow(icon, html){
-  return `<td style="width:18px;vertical-align:middle;padding-right:7px;"><img src="${icon}" width="15" height="15" style="display:block;border:0;" alt=""></td>
-<td style="vertical-align:middle;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:${C.ink};white-space:nowrap;">${html}</td>`;
+  return `<td style="width:15px;vertical-align:middle;padding-right:6px;"><img src="${icon}" width="13" height="13" style="display:block;border:0;" alt=""></td>
+<td style="vertical-align:middle;font-family:Helvetica,Arial,sans-serif;font-size:9pt;color:${C.ink};white-space:nowrap;">${html}</td>`;
 }
 const link = (href,text,col) => `<a href="${href}" style="color:${col};text-decoration:none;">${text}</a>`;
 
 function sigFull(p){
-  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
-<tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:${C.maroon};padding-bottom:3px;">${esc(p.name)}</td></tr>
-<tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:${C.grey};padding-bottom:12px;">${esc(p.title)}</td></tr>
-<tr><td style="padding-bottom:14px;"><img src="${ASSETS.logo}" width="180" height="48" style="display:block;border:0;" alt="Opus Media"></td></tr>
+  const F="font-family:Helvetica,Arial,sans-serif;";
+  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}line-height:1.15;">
+<tr><td style="${F}font-size:12pt;font-weight:bold;color:${C.maroon};padding:0 0 1px;">${esc(p.name)}</td></tr>
+<tr><td style="${F}font-size:10pt;font-weight:bold;color:${C.ink};padding:0 0 2px;">${esc(p.title)}</td></tr>
+<tr><td style="padding:0 0 13px;"><img src="${ASSETS.logo}" width="180" height="48" style="display:block;border:0;" alt="Opus Media"></td></tr>
 <tr><td>
-  <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
-    <tr>${p.phone?iconRow(ASSETS.phone, esc(p.phone)):""}<td style="width:18px;"></td>
+  <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}">
+    <tr>${iconRow(ASSETS.phone, esc(p.phone))}<td style="width:16px;"></td>
         ${iconRow(ASSETS.web, link("https://www.opusmediaww.com","www.opusmediaww.com",C.ink))}</tr>
-    <tr><td colspan="5" style="height:7px;"></td></tr>
+    <tr><td colspan="5" style="height:7px;line-height:7px;font-size:7px;">&nbsp;</td></tr>
     <tr>${iconRow(ASSETS.mail, link("mailto:"+esc(p.email), esc(p.email), C.ink))}</tr>
-    ${p.addr?`<tr><td colspan="5" style="height:7px;"></td></tr>
-    <tr><td style="width:18px;vertical-align:top;padding-right:7px;padding-top:2px;"><img src="${ASSETS.pin}" width="15" height="15" style="display:block;border:0;" alt=""></td>
-    <td colspan="4" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:${C.ink};">${esc(p.addr)}</td></tr>`:""}
+    ${p.addr?`<tr><td colspan="5" style="height:6px;line-height:6px;font-size:6px;">&nbsp;</td></tr>
+    <tr><td style="width:15px;vertical-align:top;padding-right:6px;padding-top:2px;"><img src="${ASSETS.pin}" width="13" height="13" style="display:block;border:0;" alt=""></td>
+    <td colspan="4" style="${F}font-size:9pt;color:${C.ink};white-space:nowrap;">${esc(p.addr)}</td></tr>`:""}
   </table>
 </td></tr></table>`;
 }
 
 function sigReply(p){
-  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
-<tr><td style="font-family:Arial,Helvetica,sans-serif;font-size:19px;font-weight:bold;color:${C.maroon};padding-bottom:9px;">${esc(p.name)}</td></tr>
+  const F="font-family:Helvetica,Arial,sans-serif;";
+  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}line-height:1.1;">
+<tr><td style="${F}font-size:12pt;font-weight:bold;color:${C.maroon};padding:0 0 7px;">${esc(p.name)}</td></tr>
 <tr><td>
-  <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
-    <tr>${p.phone?iconRow(ASSETS.phone, esc(p.phone)):""}<td style="width:18px;"></td>
+  <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}">
+    <tr>${iconRow(ASSETS.phone, esc(p.phone))}<td style="width:16px;"></td>
         ${iconRow(ASSETS.web, link("https://www.opusmediaww.com","www.opusmediaww.com",C.ink))}</tr>
   </table>
 </td></tr></table>`;
@@ -379,7 +386,7 @@ function render(){
     <div>${p.start?esc(fmt(p.start)):"No start date set"}</div></div>`;
 }
 
-["f-name","f-title","f-email","f-phone","f-office","f-start"].forEach(id=>{
+["f-first","f-last","f-title","f-email","f-phone","f-office","f-start"].forEach(id=>{
   $(id).addEventListener("input",render); $(id).addEventListener("change",render);
 });
 render();
