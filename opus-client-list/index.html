@@ -205,7 +205,7 @@ async function spLoadAll(){
     (j.value||[]).forEach(it=>{ const f=it.fields||{};
       out.push({
         spId: it.id,
-        name:  f.Title || "",
+        name:  pick(f, ["Title","Name","field_0"]) || "",
         email: (f.field_1 || f.ContactEmail || pickEmail(f) || "").toLowerCase(),
         company: f.field_2 || f.Company || "",
         sort:  numOr(f.field_3 != null ? f.field_3 : f.SortIndex, 9999)
