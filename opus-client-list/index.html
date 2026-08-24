@@ -105,7 +105,6 @@ textarea:focus{border-color:var(--accent-glow)}
   </div>
 
   <div class="warn" id="warn"></div>
-  <pre id="diag" style="display:none;white-space:pre-wrap;background:var(--surface-2);border:1px solid var(--accent);padding:14px;margin-top:16px;font-family:var(--font-mono);font-size:11px;line-height:1.6;color:var(--ink);overflow:auto"></pre>
 
   <div class="bar">
     <input class="search" id="search" placeholder="Search name, email or company…">
@@ -199,26 +198,17 @@ async function spResolve(){
 function pick(obj, keys){ for(const k of keys){ if(obj[k]!==undefined && obj[k]!==null && obj[k]!=="") return obj[k]; } return ""; }
 function pickEmail(obj){ for(const k in obj){ const v=obj[k]; if(typeof v==="string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return v; } return ""; }
 function numOr(v,d){ const n=Number(v); return isNaN(n)?d:n; }
-let _rawDumped=false;
 async function spLoadAll(){
   const out=[]; let url="/sites/"+siteId+"/lists/"+listId+"/items?expand=fields&$top=999";
   while(url){
     const j = await g(url);
-    if(!_rawDumped && j.value && j.value[0]){
-      _rawDumped=true;
-      const keys=Object.keys(j.value[0].fields||{});
-      console.log("RAW SHAREPOINT FIELD NAMES:", keys);
-      console.log("RAW FIRST ITEM FIELDS:", JSON.stringify(j.value[0].fields,null,2));
-      const box=document.getElementById("diag");
-      if(box){ box.style.display="block"; box.textContent="SharePoint field names: "+keys.join(", ")+"\n\nFirst item: "+JSON.stringify(j.value[0].fields,null,2); }
-    }
     (j.value||[]).forEach(it=>{ const f=it.fields||{};
       out.push({
         spId: it.id,
-        name:  pick(f, ["Title","Name","field_0"]) || "",
-        email: (pick(f, ["ContactEmail","Email","ContactEmail0","field_1"]) || pickEmail(f) || "").toLowerCase(),
-        company: pick(f, ["Company","Company0","field_2"]) || "",
-        sort:  numOr(pick(f, ["SortIndex","SortIndex0","field_3"]), 9999)
+        name:  f.Title || "",
+        email: (f.field_1 || f.ContactEmail || pickEmail(f) || "").toLowerCase(),
+        company: f.field_2 || f.Company || "",
+        sort:  numOr(f.field_3 != null ? f.field_3 : f.SortIndex, 9999)
       });
     });
     url = j["@odata.nextLink"] ? j["@odata.nextLink"].replace(GRAPH,"") : null;
@@ -226,8 +216,8 @@ async function spLoadAll(){
   out.sort((a,b)=>a.sort-b.sort);
   return out;
 }
-async function spAdd(c,idx){ const j=await g("/sites/"+siteId+"/lists/"+listId+"/items",{ method:"POST", body:JSON.stringify({ fields:{ Title:c.name, ContactEmail:c.email, Company:c.company, SortIndex:idx } }) }); return j.id; }
-async function spUpdate(spId,c,idx){ await g("/sites/"+siteId+"/lists/"+listId+"/items/"+spId+"/fields",{ method:"PATCH", body:JSON.stringify({ Title:c.name, ContactEmail:c.email, Company:c.company, SortIndex:idx }) }); }
+async function spAdd(c,idx){ const j=await g("/sites/"+siteId+"/lists/"+listId+"/items",{ method:"POST", body:JSON.stringify({ fields:{ Title:c.name, field_1:c.email, field_2:c.company, field_3:idx } }) }); return j.id; }
+async function spUpdate(spId,c,idx){ await g("/sites/"+siteId+"/lists/"+listId+"/items/"+spId+"/fields",{ method:"PATCH", body:JSON.stringify({ Title:c.name, field_1:c.email, field_2:c.company, field_3:idx }) }); }
 async function spDelete(spId){ await g("/sites/"+siteId+"/lists/"+listId+"/items/"+spId,{ method:"DELETE" }); }
 
 let syncQueued=false, syncing=false;
