@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opus Client List</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAU3ElEQVR4nKWbe7BdVX3HP2vtfR43uc8k9yY3CRDfYhRrp0UbCwlxRKwD+MIX4mNQXoozWp9V1FKc6Whr27Ht8FArtWpBK4Kd1kcRCYggBqQNCihjogk3N+Te3NznOWfvvVb/WO99Lo6je+bce/bea6/1+31/79/aRyilNKscqqzIGjkAy3NzPHz7Hh65404O7XuQ2UOP0VmYp+x00Ur5Z4QArUETPrj/wnzR9r/QOr2Pe1absfaGfxbQCLRdBwECgZCSrNmgNTTMus2TnLh9O886/TRO3rmTwXVjAFRFicyyMG90iDoAWmvQGpllzP76ILdfex333XQzM/v3U1UlMmuQNXKElEgpEUJ4JsQqjGtRm9tzo8OY6FmEv4UmAkm4m2EKN1YpRVVVqLJEl4bZ9SeeyB+//FzOvPRiNpxwAqqqQAhP76oAaKUQlqnvX30N//mJv2busSnag4M02y0QAmUB0oEGEMIyF5h3ROvaRTeub2ztu7YACECLVUQH7q5FTyAECEtjr9NhaWGBsclJXn3Fh3nJJRejtfY89gHgbpS9Hl+89J3cdf0XWTs6Qt5qoirldVvXaPFSjwSrHShoK01tx1oA7YOiZi5BgxyYhqkEJK8qKWixULCgySyj1+2yODfHGW9+Mxdf/U/kzWYCglBKaa3MslVZcvXrzueBW77J6MaN6KpCKZUuZCf3WmgR7zMBC0BCWOC930ckDJnZtIg0zAGjU8DMiTba5kzMm5EGKY05H57ij849l/fd8BWyPDfikAKJ1mitkFnGv112OQ/c8k3GJiepyuIJ1dXMrtFae4nGTGlHmRWZ0OkEum++9ERb5r2ktfNNQcMERoO8vjhw/XP2glKURcHY5s386OZbuPadlyOzDK2VwUcpRZbnfP+a6/jBF65ndNMmyl4PYWFMaHPu12FgJeNJF6ubiDFOSzRhjpQbx77w5uF8np3Efw/Mh0W0INWUBGhB2StYN7mJWz/3L/zPZz9PlucoVRkTmDv0GH916g7KXoc8yz3jsdP2TDrCtDZelUCkD4hxXHMA6EBYMsS7uojhBEEHeL8pxTOqGqkqHuqIlAJVljTaA3zq3rsZm5xECiG47eprmZ8+TN5sopRCWfXWaISuYxD7f+1Rtm4kSMabRmDem0jkxLQd2+8Tgpb4Fe38WusEEO9/3PU6zW6A0jRabY5NTfGtq69BCIFcnpvj/pu+wcDwsPH2OM0UCKt23v4iwoRTS2HtVXhBrwJXACMO5zq5mzh4PyakWWF8ZImoCNAoQ+rXJHuhqioGhof54X/cxNLx48iH99zJzK9+Rd5qeacnrGoLa2waUN5GtTddJTDaEi0SJXEpk3Ut8B/hfUTgPeXASTVePwbOW1DkT5JIEdOkFHmrxZED+3nw9j3kj9x5J1VZRoOEV2MvNxFmc4qvrG26WJ4Qmywc5JqqeHR4/gXSwhTMw6Jnp1Fudh0/R6ShqUbVDw1IoCpL9u25g/zg//6fDQtpKHOeNkllwWRlqyZDQTLhhrDXBFqkILj76H6IdN+4eKF0fadZQoQokTC8SuKkNWRZzq/27SM/dugxskYDtIoWcRJIvbxb34PkvU+q+p6JmnNzZhXbdd1eY8m7Ofs8eh0cHTNvwnddMxI/oxUyzzl68CB5Z37eaICFRpiE2iAbI+0ZNxyLmNOa9F3u7uYScTjsV6CEeUe8B1Rr7/nBRBsHZOIDXHYaF1mOZveMdj7LpMmdhQXyots1hGp8zPWTRoSpgF8wlZrOa0BkEiEkZVFQdDpUZYlW2hAsCHlEbZnE5qMbUmbkrRZ5q2kulJUBwjEropQ50qVY3evXBCBt3ZOjlLGfyE4SlRTptMIPqhm8MLX5yuIiZbfL0Pg4m57xNEY2biJvNtMQR4gOsQdQmsThqqpi/ugMR/bv59jUFEIIBoaHDfBusHDhVQd1t0An+YB3mi6cCaqiJDfqJny4q5PlrCkJJzrSB22kXlUVS3NzPOX5p3L6W97E9t27GT/pxKT0/F2PuekjPHzXXdx2/b/ywLe/Q6PVojHQRpUVLmVPDmdxzqQD/yZvsQWeBsS7xie1SJ/z39M63LjEOAsTAFLS63YRec6rr/wYuy96u6228PV33VSe+Kjria3YIhDvuekbXP/e93N8epqBoSHT6NBBoxINdv7Jma7lR0V+Qrxrw6Th0xc2QR19rr9Ks8M4TEm316U5OMjlN36ZZ+zYYcrnqgIpk3bZ73poNFIEALI8Z/qX+/nkq85j6pFHGBgcRFVVsPl6VHK0R1J2IAUNEC6S471/nAuAczoBTxMpFN2i4L3fvJlnnvanFN0ueaOB0posy35v5uOjsq2uqijIm02O7D/AR3adwcrccbJm04duiJl3EKY5DkBl/+dEF7U26a3P2evlsD2UBplJ5o/O8uqrrjTM93qmmKoUWZ5RFgX3/Nd/89CP7mF5YTHR7n5n2B8YNdBo5Gzbvp0dZ5/N2Pg4VVWRNRoUvR4T207irX/3af72ta9nqNWiisJnzLibK4nakcDF5dYH6PimsFzGxEYxSglBr9thdOtWrrrnLppr1lgAjeQfue8+/uGii3l0716E8x2RgcXr1f1OHQQFrNu8hYs/9Ule/IY3UJUlwppXlud8/Kw/48Hbb2ft8IhpdZGabH0t11x1I3I3wjAfVvYm4LEI8V9IyfLiEi9+1StpDw5SFgVCSGQmOfDTn3HFS15KMTfH5o2bQl0RJ0PmQq3Ss+uKcO56DkvH5/nE+eeTNRrsPu88yrL0nn/Xmy7gge/eSug3phlBEKxlXEewC5AgUFKAtAHRBtC0LnDqZb2oUmStJs950e4QbIXJ/L7wwQ9RzMyyYcM4oqwQlYKqQiiFVApZKYRSYM/dd6EUQtsx7qM1oqoYWrOGsTWDfO79H2Bxbo4sy7xHP/mFL2RwfANl0Qs1SQ1Y59vq3U2hQap4VISck5JL3Yw6GomUZcmasTE2PvUpPifNsoxDv/gFD++5g7GxdeiiJBOhVe0+bmGBOZdCIMF+zHc3VroQqBRDg0PMHjjAfbd+zzdiAdZvnmRsy2aKXq+vuIqlr2yvIC71NSBFpCz1tpN3hjU0laporF1DY2CAqiz95/Cjj1J1OmR5Fqoz8NrjmPYXY2ms8s1agDEvC9Khhx826xUFRa9nssOhISqlvP9KHB4ug0mNwwGT+6GapE/vnbZrNNbqSikkw+vWAfjEZ3B42KitEChhCiQZVS2eNRE8igup9cNfchZm992a7TZZnvs1AfJGwxRNtSZtDII7q9cGuSbE+v7aWSeMu78yy+gsL/Hlqz5B3mqhqoq8kTP980fNuU01XZHl8vugllGTpU5wVAy42KEBlKY9sJYHbruNnqooyxIpJXmWceTQIfJmI+xhuFrAz1Wz7yh7Fu+YmNRxB0jrkP2HrS1tcmhf32t6VcXssVmKqE4caLQZHRnxEnMNVe0B0LWgGByUV10rxaS4wfb+0CwuLjLfWaaya+YIRodHaNtkyNQ1kWE7O/LfA6AAebRT5f97eetgU3FzQ2vIs4xNk5uDEIUArVBFmaCtrRYFYaet7DQEh8KrXp0KQCvN0NAIw2NjHjSB2f2NnXVYCVvpRoBH8xoAowX9MLfPHWQR7unwwPLsbLA9bXxBa3AtbqtN1yCND1fNquCdrA9Kq9LAjUZKSbGyTK/bDTQKaK8dNMlRRB6WcqdVnvuo8YvW5PV1/BGpjXNXTp20qshaLf7gpWfZHRaztbZwdIZf/uQn5Hnu9d7H5Uhi2mHs13GqGziv5+5CCIpej01PfzqTT34SVVUZM5OCn/94L8vH5xFZhotmbhKB6Iv/HiQBudN0b6yCdAJnTxFyVVkxNDHCu792A1kWMNy3Zw9XnflShkdHTZnqiK95XhygItkX8vfjHSknAJHnLM7Pc94bXscr/vw9CUMf2LWbuXt/7CvDOrNhnhCG3bwyWd3rjkMkqL/3AXbHqFAVKwuLaKUoul2UUnSXVwIDNXtcdZvbZxqhzyBqXWfpchEBSEGn00EpRa/ToSrN7nVZlp42s5aoqX3MnE9cUdgE2I1Dh0lMBAiJpbDZshAgpKTT6VD2CvNChX1bZGTjBLLRMI1HEVJnhAlJ3onWwYiKF//+QHS4xowGxjZOIO16MjedqJXlZYQPebGbDWtGaYXhyuIsYzvT0WKib48toCrznMVjx5h57JBHXCvFSdu3s+WZz6SztGT7AelOEK7jTAhr8b5gojFEIVRAWZotrefs2oWTiEBw/PGjHJueJms0EtOJfUFdyd0wIUx2aVEOI7XW/jwQH0DK8pzOwiIP/fBuP14pRaPZ5DVXfJiVlRWTqDQapicopGHcqpAQMtQGrnVum6rmvSPpAZdZRpY3mD06zVkXvZ0tT32q38nSWvPI3r3MTR8hbzbw23bB2SeHxr7PoENuIetx06EbKbC/p9xHKZqtFntuuNHYrTWDqiw59ZyzuegfP0NnZYW5xx+ns7xMr9uh2+nQ63TodTsU3S5Ft0PR6VJ0u/S6XX+/u9Kh21mh2+3Q6XRYnJtjZmqKM9/yVi648i+N95cBwO/9+w1R9rAa08G0nDtINncuiZqiHgRhkg5NyKLcLqxvbAjB47MzfOjrX2PHOeeYjlCjgaoqsjzn0fvu57vXXscv77+f7vIyUVT2C/l9gkhCsbXKPGfjtm2c/vrXcdprX+MdpUm9Gzy0dy/vPn0Xw+0BU3MIkn3NODVK9yOEXy8BwKu6Q8sjI8JGBG63WLC0skx7YoK//+EPGJuYoCwKkxdYEMD09otud1XpPJHEDAmaLM9ptFpmHttgVUqRSUlRFLxr5xkcfOAnDA2NgAopuedllfhvPsFhikvHJ3U6NMrgRIRciG9+S1xJyczsDE/6kxdw1S03MzQ6StHrkWUZ7p0CmYfmxe9yVFWFVgopjcdv2Jc4/vL8N/KDG25kfHwCXZU4o038IFH1J2p7jO7ypROTXvOcijuPLSyzSZiwkyoBldboLOPxmaNsfe4pvO+z1/G05z3PgKSUaVf/1nsCqx/OObou89SBA/zNpZdx/7e+xcSGCdNtqgHsM/lID+pRxo+9ZCKYgEoyMAuKAyDopjcPBVRKobOMY8fnoN3mrLdfyMsuvJBtJ5/8ezFePw7/+td8+0tf5uuf+QxL00dYv249VFUIY7VNHBNeRWL3rhp09ahyANhHwuNu50d4tbDJgyAohEbZ6xUaLSSdomDm+CwDw6M85Q+fx5NPOYXxrVvNxmYapJNkJSLb/zUpd8mxI0fY/+CDPHTvjzk+fZjRoREG2m10WZFFTHtaV0kA9Sqewa9+yfikYSOaLHn3r+ZVY5Rj1dK2y6ukpNvrsbi0SKfs2YQnkU0yV/y/7ilMrg5N2WDt4FrarbZpoGpVC9JmBhFL3EWZCOT6O0kIQa7cg8RCsl4yYt5fFdSRsI+YhiZK0c5z2qNjPv2NIYvVLQBR0wYnzHBqttmqKon5IqI17TmE7XyB9tVgnw+Iy2GtYy3QMf8RAw6lsDAQtZ5M8RJa77VGa7Tw6o5pFUKjUIzQvm/pqlQZj3dy83l01AgRtTH22VxkWV/pahYwA1UsCkJDqx4t4lZX6pRTlYm3q+sA6NpT/dfdStjKMXLcwV1Fa4VrfSamNWQZMms2Q0vZZlrWiXoGY+ITwp2Ku167L2/DGo5s/8JlLSx6YSWERyD5GkUnE8ZN1TjF9ZPZaypC0/kD1ybLm01kK95jr8UDXf/ouECORkagxc4xFJDiiVL1iMikGgtrOGFo0SeQGJwEVzvEM+8q3AifUilag4PIdVu2mF9ZCCe7WMqpksaSx4+PxRxUzXlwdNR0iAmKpOwJFKTNjMCLf2S195L8hq694PIUrxnRM66tVxUF6zdPIk96zrNNeZnYpm0Y+GupzceH9wn1jM/h8hskr10ZHIEWmIoIjh5yodmps7mcmmZd9fvnNjnGk7ZvR558+umILEdpRZB6v8b2eXIIHj66Kfx5iCSxlGKnpGtzuXLbP+iec2MipFwS5oc5MARJx8n9VkHhnjFfpJScsnMn8uSdp7HhpBMpbas52HXEoIg2SRyDURsr2UDxg+JdR8ugd0xR4Rt1L9zWdb/qmuvev9nLyjtr7Uvl2C/53xzUpNnrdhjfupXnnrELuXZkhOe/6pUsLSwg88x3SePorR3CfpOhlsjqWPIE9V3FYSrLShxY/f5jxFwwg5oPipmK3IWRvIgiThpuHT0yy1hamOeFr3g5I+vX2x9MTB3mg6e+gGJlhSzP/ctN/gWGWA1dvq1Tfp0G+Ia/qGlQDQj3TNKz13V2XZYXg7qK+UTnzvEm4ywtQgiqqqTRbPHP9/6I8RO2IlVVMbZ5ktd8/KMszB5D2NdmddSviw9/tur1INewJxd+Ukfk8JIj4sB7/Zh5e1NFQ+MfcsR+wDMuAvPuX5bnzM8d440fvYKJE0+gqiqktL28F73tQna/7UJmpw6TNZt9CKduPTQeYiI8JlH31507m9aY7FLpmoevrRVvkSUtdbemSM89VbHjdedakzWbzExP8ZIL3sTL33EZVVmSSel+NmdVvqr49OvP5+6bvsG6TZtsgpSw7yeNjziTi2/FEguPO7OAVfhP/IZfSqRzBNUO2uUdnnb+y4RnIQQyz5mZnmLHy87mY1+9kbzZwHWiJeBfZ80aDd7zlS/x4rddyNyRI1RlgczzkCPoQJSOOKvbpf5NzPvMTNQ0SBPFBnNNRHOFYJHMGyffYS3z/oFr0s5OT3HmGy/gY1+9kUa7ZbXVGu0T/XT21s99nhuvvIqZgwcZGBokb7fxr8ra+BOrolNGFVWVOlxOpBenuj60pYbW15SN2VPRVf+MA9XWNN1uh+WFBUYnJjj/I3/BKy6/3O9fxK/e/uYfTz82xXeuuZa7v34TRw7sp+qVyEyS5Q3/HpCx72AWWogagXGHObx6m7y44J0d4Zz0x5MuuMTm4QHR5sfTVWl+QC0yyfjWrew491zOecdlbNp20m/34+n4iFvby8fn+ekdd/CzO+7kwL59zBw8xPLxOXorHZRy72o4RtOXowyBtRabA8FyFrbgiZoXIXN0MCmC6jrNElKSN5usGRpi/ZYtbNv+LJ592mk8d9dORjZsAKAsyyd8dff/Ad09Mk30wfDSAAAAAElFTkSuQmCC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://unpkg.com/@azure/msal-browser@3.14.0/lib/msal-browser.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--font-display:'Anton','Arial Narrow',sans-serif;--font-body:'Archivo',system-ui,sans-serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;--ease:cubic-bezier(.22,1,.36,1);--grid:26px 1.15fr 1fr 1.55fr 30px}
+[data-theme="crimson"]{--bg:#1a1a1a;--surface:#212121;--surface-2:#2b2b2b;--ink:#e8e2d8;--ink-dim:#8f887d;--line:#39352f;--accent:#8a1a1a;--accent-ink:#e8e2d8;--accent-glow:#c2352f;--done:#5f6d4e}
+[data-theme="paper"]{--bg:#e8e2d8;--surface:#f2eee7;--surface-2:#ded7ca;--ink:#1a1a1a;--ink-dim:#6f6a60;--line:#cfc7b8;--accent:#8a1a1a;--accent-ink:#f2eee7;--accent-glow:#8a1a1a;--done:#7a8768}
+[data-theme="press"]{--bg:#0f0f0f;--surface:#161616;--surface-2:#1f1f1f;--ink:#f4f4f4;--ink-dim:#7d7d7d;--line:#2c2c2c;--accent:#e8e2d8;--accent-ink:#0f0f0f;--accent-glow:#fff;--done:#4d4d4d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;transition:background .4s var(--ease),color .4s var(--ease)}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent-glow);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px 120px}
+header.top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:36px 0 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.brand h1{font-family:var(--font-display);font-size:clamp(36px,6vw,58px);line-height:.86;text-transform:uppercase}
+.brand h1 em{font-style:normal;color:var(--accent)}
+[data-theme="press"] .brand h1 em{color:var(--ink)}
+.brand .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:10px}
+.top-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:11px 16px;border:1px solid var(--line);background:var(--surface);transition:transform .25s var(--ease),border-color .2s}
+.btn:hover{border-color:var(--accent-glow);transform:translateX(3px)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.15)}
+.swatch{width:12px;height:12px;background:var(--accent);border:1px solid var(--ink-dim);display:inline-block;margin-right:9px;vertical-align:-1px}
+.strip{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:16px 0;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);border-bottom:1px solid var(--line)}
+.strip b{color:var(--ink)}
+.strip .sep{color:var(--line)}
+.spdot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:7px;background:var(--ink-dim)}
+.spdot.live{background:var(--done)}.spdot.busy{background:var(--accent-glow);animation:sppulse 1s infinite}.spdot.off{background:var(--ink-dim)}
+@keyframes sppulse{50%{opacity:.3}}
+.warn{background:var(--accent);color:var(--accent-ink);padding:12px 16px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;margin-top:20px;display:none}
+.warn.on{display:block}
+.warn a{color:var(--accent-ink);text-decoration:underline;cursor:pointer}
+.bar{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.search{flex:1;min-width:200px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);outline:none}
+.search:focus{border-color:var(--accent-glow)}
+.add{display:grid;grid-template-columns:1.1fr 1fr 1.4fr auto;gap:10px;margin-top:12px}
+@media(max-width:760px){.add{grid-template-columns:1fr 1fr}}
+.add input{padding:12px 14px;background:var(--surface);border:1px solid var(--line);outline:none}
+.add input:focus{border-color:var(--accent-glow)}
+.add .err{border-color:var(--accent-glow)!important}
+.addmsg{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;color:var(--accent-glow);margin-top:8px;min-height:14px}
+.thead{display:grid;grid-template-columns:var(--grid);padding:0 14px;margin-top:26px;font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+.thead span{padding:8px 6px}
+.row{display:grid;grid-template-columns:var(--grid);align-items:center;padding:0 14px;border:1px solid var(--line);border-top:0;background:var(--surface);transition:background .2s}
+#list .row:first-child{border-top:1px solid var(--line)}
+.row:hover{background:var(--surface-2)}
+.row.dup{box-shadow:inset 4px 0 0 var(--accent-glow)}
+.row.dragging{opacity:.35}
+.row.over-top{box-shadow:inset 0 3px 0 var(--accent-glow)}
+.row.over-bot{box-shadow:inset 0 -3px 0 var(--accent-glow)}
+.grip{cursor:grab;color:var(--ink-dim);font-size:15px;line-height:1;text-align:center;user-select:none;padding:11px 0}
+.grip:active{cursor:grabbing}
+.cell{padding:11px 6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.cell.company{font-weight:500}
+.cell.email{font-family:var(--font-mono);font-size:12px;color:var(--ink-dim);display:flex;align-items:center;gap:8px}
+.editable{cursor:text;border-radius:0}
+.editable:hover{background:var(--surface-2)}
+.editable:focus{background:var(--bg);outline:1px solid var(--accent-glow);white-space:normal;overflow:visible}
+.cell.name:empty:before{content:'add name';color:var(--ink-dim);font-style:italic}
+.dupflag{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-glow);border:1px solid var(--accent-glow);padding:1px 5px;flex:none}
+.x{font-family:var(--font-mono);font-size:12px;color:var(--ink-dim);padding:4px 7px;opacity:0;transition:.2s;justify-self:end}
+.row:hover .x{opacity:1}
+.x:hover{color:var(--accent-glow)}
+.hint{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);margin-top:10px}
+.panel{border:1px solid var(--line);background:var(--surface);margin-top:34px}
+.panel h3{font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);padding:13px 16px;border-bottom:1px solid var(--line)}
+.panel .pb{padding:16px}
+textarea{width:100%;background:var(--surface-2);border:1px solid var(--line);padding:12px 14px;font-family:var(--font-mono);font-size:12px;line-height:1.7;resize:vertical;outline:none}
+textarea:focus{border-color:var(--accent-glow)}
+.copybar{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.toggle{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-dim);cursor:pointer}
+.toggle input{width:15px;height:15px;accent-color:var(--accent)}
+.count{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;color:var(--ink-dim);margin-left:auto}
+.imp{display:none}.imp.on{display:block}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,120%);background:var(--accent);color:var(--accent-ink);padding:13px 22px;font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;z-index:60;transition:transform .45s var(--ease)}
+.toast.on{transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><h1>Opus <em>Client List</em></h1><div class="tag">We make brands move · weekly update list</div></div>
+    <div class="top-actions">
+      <button class="btn" id="theme"><span class="swatch"></span><span id="theme-name">Paper</span></button>
+      <button class="btn" id="export">Backup</button>
+    </div>
+  </header>
+
+  <div class="strip">
+    <span><b id="s-total">0</b> recipients</span><span class="sep">/</span>
+    <span><b id="s-comp">0</b> companies</span><span class="sep">/</span>
+    <span id="s-dup">no duplicates</span><span class="sep">/</span>
+    <span><span class="spdot off" id="sp-dot"></span><span id="sp-text">Local only</span></span>
+  </div>
+
+  <div class="warn" id="warn"></div>
+
+  <div class="bar">
+    <input class="search" id="search" placeholder="Search name, email or company…">
+    <button class="btn" id="imp-toggle">Paste / import list</button>
+  </div>
+
+  <div class="add">
+    <input id="a-company" placeholder="Company">
+    <input id="a-name" placeholder="Contact name">
+    <input id="a-email" placeholder="email@company.com">
+    <button class="btn primary" id="a-add">Add</button>
+  </div>
+  <div class="addmsg" id="addmsg"></div>
+
+  <div class="panel imp" id="imp">
+    <h3>Paste a list to import — dedupes automatically</h3>
+    <div class="pb">
+      <textarea id="imp-text" rows="4" placeholder="Paste  Name &lt;email&gt;; Name &lt;email&gt;  — semicolons or new lines both work"></textarea>
+      <div class="copybar">
+        <button class="btn primary" id="imp-run">Import &amp; merge</button>
+        <span class="count" id="imp-msg"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="thead"><span></span><span>Company</span><span>Name</span><span>Email</span><span></span></div>
+  <div id="list"></div>
+  <div class="hint" id="hint">Drag the ⠿ handle to reorder · click a name or company to edit</div>
+
+  <div class="panel">
+    <h3>Recipient list — copy &amp; paste into your email <span id="out-count" style="text-transform:none;letter-spacing:0;color:var(--ink-dim)"></span></h3>
+    <div class="pb">
+      <textarea id="out" rows="5" readonly></textarea>
+      <div class="copybar">
+        <button class="btn primary" id="copy">Copy list</button>
+        <label class="toggle"><input type="checkbox" id="excl-internal"> Exclude Opus Media (internal)</label>
+        <span class="count" id="out-n"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   SHAREPOINT SYNC via Microsoft Graph + MSAL
+   Same mechanism as the Opus leave tracker: users sign in with
+   their Microsoft account; contacts live in the SharePoint list
+   "ClientContactList" on the Opus Internal site.
+   The app (client) + redirect URI below must be registered in
+   Azure AD. Redirect URI must match where this page is hosted.
+   ============================================================ */
+const AAD = {
+  clientId:  "66d9210c-5de5-4474-8d0f-700329eaaa21",
+  authority: "https://login.microsoftonline.com/8506e8b1-903e-4981-800d-7f4b35ee57ec",
+  redirectUri:"https://opusmediaww.com/clientcontact/"
+};
+const SP_SITE = "opusmediaww.sharepoint.com:/sites/OpusInternal";
+const LIST_NAME = "ClientContactList";
+const GRAPH = "https://graph.microsoft.com/v1.0";
+const SCOPES = ["https://graph.microsoft.com/Sites.ReadWrite.All"];
+
+let msalInstance=null, siteId=null, listId=null;
+
+function initMSAL(){
+  msalInstance = new msal.PublicClientApplication({
+    auth:{ clientId:AAD.clientId, authority:AAD.authority, redirectUri:AAD.redirectUri },
+    cache:{ cacheLocation:"localStorage" }
+  });
+  return msalInstance.initialize();
+}
+function getToken(){
+  const acct = msalInstance.getAllAccounts()[0];
+  return msalInstance.acquireTokenSilent({ scopes:SCOPES, account:acct })
+    .catch(()=>msalInstance.acquireTokenPopup({ scopes:SCOPES }))
+    .then(r=>r.accessToken);
+}
+async function g(path, opts={}){
+  const tok = await getToken();
+  const r = await fetch(GRAPH+path, { ...opts,
+    headers:{ Authorization:"Bearer "+tok, ...(opts.body?{"Content-Type":"application/json"}:{}) , ...(opts.headers||{}) } });
+  if(!r.ok){ const t=await r.text(); throw new Error("Graph "+r.status+": "+t.slice(0,160)); }
+  return r.status===204 ? null : r.json();
+}
+async function spResolve(){
+  const s = await g("/sites/"+SP_SITE); siteId=s.id;
+  const l = await g("/sites/"+siteId+"/lists?$filter=displayName eq '"+encodeURIComponent(LIST_NAME)+"'");
+  listId = l.value && l.value[0] ? l.value[0].id : null;
+  if(!listId) throw new Error("List '"+LIST_NAME+"' not found on the site");
+}
+async function spLoadAll(){
+  const out=[]; let url="/sites/"+siteId+"/lists/"+listId+"/items?expand=fields&$top=999";
+  while(url){
+    const j = await g(url);
+    (j.value||[]).forEach(it=>{ const f=it.fields||{};
+      out.push({ spId:it.id, name:f.Title||"", email:(f.ContactEmail||"").toLowerCase(), company:f.Company||"", sort:(f.SortIndex==null?9999:f.SortIndex) }); });
+    url = j["@odata.nextLink"] ? j["@odata.nextLink"].replace(GRAPH,"") : null;
+  }
+  out.sort((a,b)=>a.sort-b.sort);
+  return out;
+}
+async function spAdd(c,idx){ const j=await g("/sites/"+siteId+"/lists/"+listId+"/items",{ method:"POST", body:JSON.stringify({ fields:{ Title:c.name, ContactEmail:c.email, Company:c.company, SortIndex:idx } }) }); return j.id; }
+async function spUpdate(spId,c,idx){ await g("/sites/"+siteId+"/lists/"+listId+"/items/"+spId+"/fields",{ method:"PATCH", body:JSON.stringify({ Title:c.name, ContactEmail:c.email, Company:c.company, SortIndex:idx }) }); }
+async function spDelete(spId){ await g("/sites/"+siteId+"/lists/"+listId+"/items/"+spId,{ method:"DELETE" }); }
+
+let syncQueued=false, syncing=false;
+function queueSync(){ if(!MODE_SP) return; syncQueued=true; if(!syncing) runSync(); }
+async function runSync(){
+  syncing=true;
+  while(syncQueued){
+    syncQueued=false;
+    try{
+      spStatus("busy","Saving");
+      const remote=await spLoadAll(); const byEmail={}; remote.forEach(r=>byEmail[r.email]=r);
+      const keep=new Set();
+      for(let i=0;i<contacts.length;i++){ const c=contacts[i], ex=byEmail[c.email];
+        if(ex){ keep.add(ex.spId); await spUpdate(ex.spId,c,i); c.spId=ex.spId; }
+        else { c.spId=await spAdd(c,i); keep.add(c.spId); } }
+      for(const r of remote){ if(!keep.has(r.spId)) await spDelete(r.spId); }
+      spStatus("live","Synced");
+    }catch(e){ spStatus("off","Sync failed"); console.error(e); }
+  }
+  syncing=false;
+}
+function spStatus(kind,text){ const d=document.getElementById("sp-dot"),t=document.getElementById("sp-text"); if(d)d.className="spdot "+kind; if(t)t.textContent=text; }
+
+const SEED = [{"name": "Sing Lee", "email": "sing.lee@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Lukas Leong", "email": "lukas.leong@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Angus Pong", "email": "angus.pong@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Jessie Kwan", "email": "jessie.kwan@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Cammy Mok", "email": "cammy.mok@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Angelica Mak", "email": "angelica.mak@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Karen Tam", "email": "karen.tam@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Joey Li", "email": "joey.li@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Gloria Wong", "email": "gloria.wong@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Penny Fung", "email": "penny.fung@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Koey Wang", "email": "koey.wang@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Veron Chua", "email": "veron.chua@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Ronald Ng", "email": "ronald.ng@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Claudia Lim", "email": "claudia.lim@opusmediaww.com", "company": "Opus Media (internal)"}, {"name": "Peter Pang", "email": "peter_pang@okamoto.com.hk", "company": "Okamoto"}, {"name": "Jon Leung", "email": "jonleungcl@gmail.com", "company": "Other"}, {"name": "Katy Ng", "email": "katy_ng@okamoto.com.hk", "company": "Okamoto"}, {"name": "Win Wong", "email": "win_wong@samedelmanhk.com", "company": "Sam Edelman HK"}, {"name": "Camille Tan", "email": "camille_tan@luenthai.com", "company": "Luen Thai"}, {"name": "Philip Man", "email": "philipm@skechershk.com", "company": "Skechers HK"}, {"name": "Katherine Chung", "email": "katherinec@skechershk.com", "company": "Skechers HK"}, {"name": "Karmen Hui", "email": "karmenh@skechershk.com", "company": "Skechers HK"}, {"name": "Phoebe So", "email": "phoebes@skechershk.com", "company": "Skechers HK"}, {"name": "Cecilia Choi", "email": "ceciliac@skechershk.com", "company": "Skechers HK"}, {"name": "Ginny Chung", "email": "ginny_chung@samedelmanhk.com", "company": "Sam Edelman HK"}, {"name": "Viky Chen", "email": "viky_chen@luenthai.com", "company": "Luen Thai"}, {"name": "Eugenia Siu", "email": "eugenia.siu@ust.hk", "company": "HKUST"}, {"name": "Janice WONG", "email": "janice.wong@ust.hk", "company": "HKUST"}, {"name": "Carter Chan", "email": "carter.chan@pernod-ricard.com", "company": "Pernod Ricard"}, {"name": "Joyce Cheng", "email": "joycecheng@dpedu.com.hk", "company": "DP Education"}, {"name": "Timothy Cheng 鄭天恩", "email": "timothy.cheng@mekim.com", "company": "Mekim"}, {"name": "Mio Chan", "email": "mio.chan@mitopia.org", "company": "Mitopia"}, {"name": "Lili Chen", "email": "lili.chen@ust.hk", "company": "HKUST"}, {"name": "WONG Sophia", "email": "sophiawong@ust.hk", "company": "HKUST"}, {"name": "Miranda WONG", "email": "mirandawong@ust.hk", "company": "HKUST"}, {"name": "Yankie Tsang", "email": "yankie.tsang@hongkong.msf.org", "company": "MSF Hong Kong"}, {"name": "Pinky Chong", "email": "pinky.chong@cstl.com.hk", "company": "CSTL"}, {"name": "Calvin LEUNG (BCL)", "email": "calvin.leung@hkairlines.com", "company": "Hong Kong Airlines"}, {"name": "Jackie Lam, YK (EDB)", "email": "jackie.yk.lam@hktdc.org", "company": "HKTDC"}, {"name": "Rebecca Sze Hiu Ching", "email": "rebeccasze@hkgta.com", "company": "HKGTA"}, {"name": "Justin Sun Zhi Hui", "email": "justin.sun@hkgta.com", "company": "HKGTA"}, {"name": "Florence Wong Sze Ying", "email": "florencewong@hkgta.com", "company": "HKGTA"}, {"name": "Patricia Kwan Pui Kay", "email": "patriciakwan@hkgta.com", "company": "HKGTA"}, {"name": "Chloe Chan", "email": "chloechan@hkgta.com", "company": "HKGTA"}, {"name": "TANG Circle", "email": "circletang@ust.hk", "company": "HKUST"}, {"name": "Yam Hor Yin Carsson", "email": "carsson.yam@shacombank.com.hk", "company": "Shanghai Commercial Bank"}, {"name": "Candice Chu", "email": "candice.chu@shacombank.com.hk", "company": "Shanghai Commercial Bank"}, {"name": "Eva Leung", "email": "eva.lm.leung@shacombank.com.hk", "company": "Shanghai Commercial Bank"}, {"name": "Rita Chu", "email": "rita.chu@hoya.com", "company": "Hoya"}, {"name": "YIP Chris", "email": "chris.yip@hoya.com", "company": "Hoya"}, {"name": "Coco Yan", "email": "coco.yan@wipro-ldw.com", "company": "Wipro LDW"}, {"name": "Alice Kwong", "email": "alicekwong@experience11.com", "company": "Experience11"}, {"name": "Wincy Tang", "email": "wincytang@experience11.com", "company": "Experience11"}, {"name": "Harper Wong", "email": "harper.wong@royalmedic.com", "company": "Royal Medic"}, {"name": "Venus Lam", "email": "venus.lam@royalmedic.com", "company": "Royal Medic"}, {"name": "Casper Tam", "email": "caspertam@jobsdb.com", "company": "JobsDB"}, {"name": "M Cheung", "email": "mcheung@jobsdb.com", "company": "JobsDB"}, {"name": "Kevin Tse", "email": "kevin.tse@royalmedic.com", "company": "Royal Medic"}, {"name": "Jessica Yu", "email": "jessica.yu@kantar.com", "company": "Kantar"}, {"name": "Christy Chan", "email": "chchan@harrowlittlelions.hk", "company": "Harrow Little Lions"}, {"name": "Shirmy Li", "email": "shli@harrowhongkong.hk", "company": "Harrow Hong Kong"}, {"name": "KK Wong", "email": "kkwong@hkdance.com", "company": "Hong Kong Dance Company"}, {"name": "Yoyo Cheng", "email": "yoyo.cheng@wipro-ldw.com", "company": "Wipro LDW"}, {"name": "Katie Poon", "email": "katie.poon@wipro-ldw.com", "company": "Wipro LDW"}, {"name": "Frances, TANG Wai Chi", "email": "tang.frances@delta-asia.com", "company": "Delta Asia"}, {"name": "Francisco Sam", "email": "franciscosam@dbs.com", "company": "DBS"}, {"name": "Gina Chan (NL)", "email": "gina.chan@hkaf.org", "company": "Hong Kong Arts Festival"}, {"name": "Carly Wong", "email": "carly.wong@associate.hkaf.org", "company": "Hong Kong Arts Festival"}, {"name": "King Ng (NL)", "email": "king.ng@hkaf.org", "company": "Hong Kong Arts Festival"}];
+const DOMAIN_MAP = {"opusmediaww.com": "Opus Media (internal)", "okamoto.com.hk": "Okamoto", "gmail.com": "Other", "samedelmanhk.com": "Sam Edelman HK", "luenthai.com": "Luen Thai", "skechershk.com": "Skechers HK", "ust.hk": "HKUST", "pernod-ricard.com": "Pernod Ricard", "dpedu.com.hk": "DP Education", "mekim.com": "Mekim", "mitopia.org": "Mitopia", "hongkong.msf.org": "MSF Hong Kong", "msf.org": "MSF Hong Kong", "cstl.com.hk": "CSTL", "hkairlines.com": "Hong Kong Airlines", "hktdc.org": "HKTDC", "hkgta.com": "HKGTA", "shacombank.com.hk": "Shanghai Commercial Bank", "hoya.com": "Hoya", "wipro-ldw.com": "Wipro LDW", "experience11.com": "Experience11", "royalmedic.com": "Royal Medic", "jobsdb.com": "JobsDB", "kantar.com": "Kantar", "harrowlittlelions.hk": "Harrow Little Lions", "harrowhongkong.hk": "Harrow Hong Kong", "hkdance.com": "Hong Kong Dance Company", "delta-asia.com": "Delta Asia", "dbs.com": "DBS", "hkaf.org": "Hong Kong Arts Festival", "associate.hkaf.org": "Hong Kong Arts Festival"};
+const KEY = "om_circular_contacts_v2";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = e => e.trim().toLowerCase();
+const validEmail = e => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+
+let MODE_SP = false;
+let contacts = load();
+let filter = "";
+let dragEmail = null;
+
+function load(){ try{ const s=JSON.parse(localStorage.getItem(KEY)); if(Array.isArray(s)) return s; }catch{} return SEED.slice(); }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(contacts)); }catch{} queueSync(); }
+
+function companyFor(email){
+  const dom=email.split('@')[1]?.toLowerCase()||"";
+  if(DOMAIN_MAP[dom]) return DOMAIN_MAP[dom];
+  const p=dom.split('.');
+  for(let i=0;i<p.length-1;i++){ const c=p.slice(i).join('.'); if(DOMAIN_MAP[c]) return DOMAIN_MAP[c]; }
+  return p[0]?p[0][0].toUpperCase()+p[0].slice(1):"Other";
+}
+const isInternal = c => /opus media/i.test(c.company);
+
+const THEMES=["paper","crimson","press"], TN={paper:"Paper",crimson:"Crimson",press:"Press"};
+let ti=0;
+$("theme").onclick=()=>{ti=(ti+1)%THEMES.length;document.documentElement.dataset.theme=THEMES[ti];$("theme-name").textContent=TN[THEMES[ti]];};
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("on"),2400);}
+
+function dupeSet(){ const seen={},dup=new Set(); contacts.forEach(c=>{const k=norm(c.email); if(seen[k])dup.add(k); else seen[k]=1;}); return dup; }
+
+function addContact(company,name,email,quiet){
+  email=email.trim();
+  if(!validEmail(email)){ if(!quiet) flash("That doesn't look like an email address."); return false; }
+  if(contacts.some(c=>norm(c.email)===norm(email))){ if(!quiet) flash("Already on the list: "+email); return false; }
+  contacts.push({name:name.trim(),email:email.toLowerCase(),company:(company.trim()||companyFor(email))});
+  return true;
+}
+function flash(m){ $("addmsg").textContent=m; clearTimeout(flash._t); flash._t=setTimeout(()=>$("addmsg").textContent="",4000); }
+
+$("a-add").onclick=()=>{
+  const ok=addContact($("a-company").value,$("a-name").value,$("a-email").value);
+  if(ok){ $("a-company").value=$("a-name").value=$("a-email").value=""; save(); render(); toast("Added"); }
+  else { $("a-email").classList.add("err"); setTimeout(()=>$("a-email").classList.remove("err"),1500); }
+};
+["a-company","a-name","a-email"].forEach(id=>$(id).addEventListener("keydown",e=>{if(e.key==="Enter")$("a-add").click();}));
+
+$("imp-toggle").onclick=()=>$("imp").classList.toggle("on");
+$("imp-run").onclick=()=>{
+  const entries=$("imp-text").value.split(/[;\n]+/).map(s=>s.trim()).filter(Boolean);
+  let added=0,skipped=0,bad=0;
+  entries.forEach(chunk=>{
+    let m=chunk.match(/<([^>]+)>/),email,name;
+    if(m){ email=m[1].trim(); name=chunk.slice(0,m.index).trim(); }
+    else { const em=chunk.match(/[^\s<>]+@[^\s<>]+/); email=em?em[0]:""; name=""; }
+    name=name.replace(/^["']|["']$/g,'').trim();
+    if(name.toLowerCase()===norm(email)) name="";
+    if(!email||!validEmail(email)){ bad++; return; }
+    if(addContact("",name,email,true)) added++; else skipped++;
+  });
+  save(); render();
+  $("imp-msg").textContent=`${added} added · ${skipped} already on list${bad?` · ${bad} unreadable`:""}`;
+  if(added) $("imp-text").value="";
+};
+
+$("copy").onclick=async()=>{ const t=$("out").value; try{ await navigator.clipboard.writeText(t); }catch{ $("out").select(); document.execCommand("copy"); } toast("Recipient list copied"); };
+$("excl-internal").onchange=render;
+$("search").addEventListener("input",e=>{ filter=e.target.value.toLowerCase().trim(); render(); });
+$("export").onclick=()=>{
+  const blob=new Blob([JSON.stringify(contacts,null,2)],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="opus-client-list-"+new Date().toISOString().slice(0,10)+".json"; a.click(); URL.revokeObjectURL(a.href);
+};
+
+function removeContact(email){ contacts=contacts.filter(c=>c.email!==email); save(); render(); }
+
+function moveRow(fromEmail,toEmail,after){
+  if(fromEmail===toEmail) return;
+  const from=contacts.findIndex(c=>c.email===fromEmail); if(from<0) return;
+  const [it]=contacts.splice(from,1);
+  let to=contacts.findIndex(c=>c.email===toEmail); if(to<0){ contacts.push(it); }
+  else contacts.splice(after?to+1:to,0,it);
+  save(); render();
+}
+
+function outputList(){
+  const excl=$("excl-internal").checked, seen={}, out=[];
+  contacts.forEach(c=>{ if(excl&&isInternal(c))return; const k=norm(c.email); if(seen[k])return; seen[k]=1; out.push(c.name?`${c.name} <${c.email}>`:c.email); });
+  return out;
+}
+function updateOutput(){ const out=outputList(); $("out").value=out.join("; "); $("out-n").textContent=out.length+" in list"; $("out-count").textContent="("+out.length+")"; }
+
+function render(){
+  const dup=dupeSet();
+  $("s-total").textContent=contacts.length;
+  $("s-comp").textContent=new Set(contacts.map(c=>c.company)).size;
+  $("s-dup").innerHTML=dup.size?`<span style="color:var(--accent-glow)">${dup.size} duplicate${dup.size>1?"s":""}</span>`:"no duplicates";
+  const w=$("warn");
+  if(dup.size){ w.classList.add("on"); w.innerHTML=`${dup.size} duplicate email${dup.size>1?"s":""} on the list — <a id="fixdup">remove the extras</a>`; setTimeout(()=>{const f=$("fixdup");if(f)f.onclick=dedupe;},0); }
+  else w.classList.remove("on");
+
+  const rows=contacts.filter(c=>!filter||(c.name+" "+c.email+" "+c.company).toLowerCase().includes(filter));
+  $("list").innerHTML = rows.length ? rows.map(c=>{
+    const isD=dup.has(norm(c.email));
+    return `<div class="row ${isD?'dup':''}" data-email="${esc(c.email)}">
+      <span class="grip" draggable="true" title="Drag to reorder">⠿</span>
+      <div class="cell company editable" contenteditable="true" data-field="company" data-email="${esc(c.email)}">${esc(c.company)}</div>
+      <div class="cell name editable" contenteditable="true" data-field="name" data-email="${esc(c.email)}">${esc(c.name)}</div>
+      <div class="cell email">${esc(c.email)}${isD?'<span class="dupflag">Dup</span>':''}</div>
+      <button class="x" data-x="${esc(c.email)}" aria-label="Remove">✕</button>
+    </div>`;
+  }).join("") : `<div style="padding:40px;text-align:center;color:var(--ink-dim);font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase">No matches</div>`;
+
+  wire();
+  updateOutput();
+  $("hint").style.display = filter ? "none" : "";
+}
+
+function wire(){
+  const list=$("list");
+  list.querySelectorAll("[data-x]").forEach(b=>b.onclick=()=>removeContact(b.dataset.x));
+
+  list.querySelectorAll(".editable").forEach(el=>{
+    el.addEventListener("blur",()=>{
+      const c=contacts.find(x=>x.email===el.dataset.email); if(!c) return;
+      const v=el.textContent.replace(/\s+/g," ").trim();
+      if(el.dataset.field==="company") c.company=v||companyFor(c.email);
+      else c.name=v;
+      save(); updateOutput();
+    });
+    el.addEventListener("keydown",e=>{ if(e.key==="Enter"){ e.preventDefault(); el.blur(); } });
+  });
+
+  list.querySelectorAll(".grip").forEach(g=>{
+    const row=g.closest(".row");
+    g.addEventListener("dragstart",e=>{ dragEmail=row.dataset.email; row.classList.add("dragging"); e.dataTransfer.effectAllowed="move"; e.dataTransfer.setData("text/plain",dragEmail); });
+    g.addEventListener("dragend",()=>{ row.classList.remove("dragging"); list.querySelectorAll(".over-top,.over-bot").forEach(r=>r.classList.remove("over-top","over-bot")); });
+  });
+  list.querySelectorAll(".row").forEach(row=>{
+    row.addEventListener("dragover",e=>{
+      e.preventDefault();
+      const rect=row.getBoundingClientRect(); const after=(e.clientY-rect.top)>rect.height/2;
+      row.classList.toggle("over-bot",after); row.classList.toggle("over-top",!after);
+    });
+    row.addEventListener("dragleave",()=>row.classList.remove("over-top","over-bot"));
+    row.addEventListener("drop",e=>{
+      e.preventDefault();
+      const rect=row.getBoundingClientRect(); const after=(e.clientY-rect.top)>rect.height/2;
+      moveRow(dragEmail,row.dataset.email,after);
+    });
+  });
+}
+
+function dedupe(){ const seen={},keep=[]; contacts.forEach(c=>{const k=norm(c.email); if(!seen[k]){seen[k]=1;keep.push(c);}}); contacts=keep; save(); render(); toast("Duplicates removed"); }
+
+async function boot(){
+  render();
+  try{
+    await initMSAL();
+    await msalInstance.handleRedirectPromise();
+    if(!msalInstance.getAllAccounts().length){
+      spStatus("off","Sign in to sync");
+      await msalInstance.loginRedirect({ scopes:SCOPES });
+      return;
+    }
+    spStatus("busy","Connecting");
+    await spResolve();
+    const remote = await spLoadAll();
+    contacts = remote;
+    try{ localStorage.setItem(KEY, JSON.stringify(contacts)); }catch{}
+    MODE_SP = true; render(); spStatus("live","Synced"); const so=document.getElementById("signout"); if(so){so.style.display="";so.onclick=()=>msalInstance.logoutRedirect({postLogoutRedirectUri:AAD.redirectUri});}
+  }catch(e){
+    MODE_SP=false; spStatus("off","Not connected — local only"); console.error(e);
+  }
+}
+boot();
+</script>
+</body>
+</html>
